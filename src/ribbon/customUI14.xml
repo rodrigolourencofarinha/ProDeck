@@ -1,0 +1,412 @@
+<customUI xmlns="http://schemas.microsoft.com/office/2009/07/customui" onLoad="LockAspectRatio.OnLoad"> 
+    <ribbon> 
+        <tabs> 
+            <tab id="Strator" label="ProDeck" keytip="X">               
+                <group id="GroupInsert" label="Insert" imageMso="SlideNewGallery"> 
+                    <control idMso="SlideNewGallery" showLabel="false" keytip="SI"/>
+                    <gallery idMso="ShapesInsertGallery" showLabel="false" />
+                    <control idMso="PasteMenu" showLabel="false" keytip="PM"/>
+                    <control idMso="TableInsertGallery" showLabel="false" keytip="TI"/>     
+                    <control idMso="FlyoutAnchorInsertPictures" showLabel="false" keytip="IP"/>
+                    <control idMso="IconInsertFromFile" showLabel="false" keytip="NS"/>
+                    <menu  id="BatchTool" label="Batch Add or Delete" imageMso="RecurringTaskInsert" showLabel="false" keytip="AUD"
+                    screentip="Batch Add or Delete" supertip="Add/Delete objects from all slides.&#13;&#13;Tip: When you use the 'Paste Object to Selected Slides' function, Strator will assign a unique name to the objects on all slides. With this unique name, you can update the position or remove all objects with the same name. You can also copy the name and assign it to other objects. This way, Strator will find this object and update position/delete as needed.">
+                        <button id="Paste_Objects_All_Slides" label="Paste Objects to Selected Slides" onAction="Paste_Objects_All_Slides" imageMso="RecordsExpandAllSubdatasheets" showLabel="false"
+                        screentip="Paste Objects to Selected Slides" supertip="Paste object in the clipboard to selected slides.&#13;&#13;The object can be removed later by clicking on the 'Delete Matching Objects from All Slides' button." 
+                        getEnabled="EnabledBtInfo"/>
+                        <button id="Update_Objects_Position" label="Updated Position of Pasted Objects" onAction="Update_Objects_Position" imageMso="SendReceiveAll" showLabel="false"
+                        screentip="Updated Position of Pasted Objects" supertip="Updates the position of objects that were pasted in several slides. Select the matching object and click on the update position function. Objects will match the same top and left position of the selected one." 
+                        getEnabled="EnabledBtInfo"/>
+                        <button id="Delete_Similar_Objects" label="Delete Matching Objects from All Slides" imageMso="RecordsCollapseAllSubdatasheets" onAction="Delete_Similar_Objects"
+                        screentip="Delete Matching Objects from All Slides" supertip="Delete all matching objects from all slides (including this one).&#13;&#13;A matching object matches two criteria: size and position.&#13;&#13;For objects within groups, the group itself and the object within must both match."  
+                        getEnabled="EnabledBtInfo" />
+                    </menu>       
+                    <splitButton id="Insert_Sticky_Note" size="normal" showLabel="false" keytip="SN"
+                    getEnabled="EnabledBtInfo">
+                        <button id="NewNoteButton" label="Note" imageMso="ReviewNoteSplit" onAction="GenerateStickyNote" showLabel="false" 
+                        screentip="Insert Sticky Note" supertip="Insert a sticky note in the slide."/>
+                        <menu id="NoteMenu" itemSize="normal">
+                            <menuSeparator id="SeparatorInsertNote" title="Insert Sticky Note"/>  
+                            <button id="NewNoteButton2" label="Insert Sticky Note" imageMso="ReviewNoteSplit" onAction="GenerateStickyNote" />    
+                            <menuSeparator id="SeparatorNotesThisSlide" title="Sticky Notes on this Slide"/>   
+                            <button id="NotesMoveOffSlide" label="Move off this Slide" imageMso="OutlineMoveUp" onAction="MoveStickyNotesOffSlide" />
+                            <button id="NotesMoveOnSlide" label="Move on this Slide" imageMso="OutlineMoveDown" onAction="MoveStickyNotesOnSlide" />
+                            <button id="DeleteNotesOnSlide" label="Delete of this Slide" imageMso="Delete" onAction="DeleteStickyNotesOnSlide" />
+                            <menuSeparator id="SeparatorNotesAllSlides" title="All Sticky Notes on the Presentation" />
+                            <button id="NotesMoveOffAllSlides" label="Move off All Slides" imageMso="OutlineMoveUp" onAction="MoveStickyNotesOffAllSlides" />
+                            <button id="NotesMoveOnAllSlides" label="Move on All Slides" imageMso="OutlineMoveDown" onAction="MoveStickyNotesOnAllSlides" />
+                            <button id="DeleteNotesOnAllSlides" label="Delete of All Presentation" imageMso="ReviewDeleteAllMarkupOnSlide" onAction="DeleteStickyNotesOnAllSlides" />
+                            <menuSeparator id="SeparatorCommentsConversion" title="Convert Comments" />
+                            <button id="ConvertCommentsToStickyNotes" label="Convert Comments on this Slide to Sticky Notes" imageMso="ConvertComments" onAction="ConvertCommentsToStickyNotes" />
+                        </menu>
+                    </splitButton>
+                    <splitButton id="TextAndOthers" size="normal" showLabel="false" keytip="XB"
+                    getEnabled="EnabledBtInfo">
+                        <button id="Control_Text_Box" label="Draw Text Box, Notes, and Templates" imageMso="TextBoxInsert" onAction="Control_Text_Box" showLabel="false" 
+                        screentip = "Draw Text Box"
+                        supertip="Draw a text box anywhere.&#13;&#13;Click on the down arrow to add other elements, such as footnotes and templates."/>
+                        <menu id="TextAndOthersMenu" itemSize="normal">
+                            <menuSeparator id="SeparatorTextBox" title="Draw Text Box"/>  
+                            <button id="Control_Text_Box2" label="Draw Text Box" imageMso="TextBoxInsert" onAction="Control_Text_Box" showLabel="false"/>
+                            <menuSeparator id="SeparatorHeadings" title="Insert Headings"/>
+                            <button id="HeadingOne" label="1 Heading" imageMso="PowerQuerySearchByName" onAction="HeadingOne" />
+                            <button id="HeadingTwo" label="2 Headings" imageMso="PowerQuerySearchByName" onAction="HeadingTwo" />
+                            <button id="HeadingThree" label="3 Headings" imageMso="PowerQuerySearchByName" onAction="HeadingThree" />
+                            <button id="HeadingFour" label="4 Headings" imageMso="PowerQuerySearchByName" onAction="HeadingFour" />
+                            <button id="HeadingFive" label="5 Headings" imageMso="PowerQuerySearchByName" onAction="HeadingFive" />
+                            <button id="HeadingSix" label="6 Headings" imageMso="PowerQuerySearchByName" onAction="HeadingSix" />
+                            <menuSeparator id="SeparatorFootnotes" title="Slide Footnotes"/>
+                            <button id="Notes" label="Insert or Reposition Footnote" imageMso="FootnoteInsert" onAction="Notes" />
+                            <button id="Update_Notes" label="Update Footnote Position on all Slides" imageMso="FootnoteNext" onAction="Update_Notes" />
+                        </menu>
+                    </splitButton>
+                </group > 
+                <group id="GroupFontPragraph" label="Font and Paragraph" imageMso="ChangeCaseGallery">
+                    <box id="BoxFont" boxStyle="horizontal">
+                        <comboBox idMso="Font" sizeString="WWWWWW"/>
+                        <control idMso="FontSize" showLabel="false"/>
+                        <control idMso="FontSizeIncrease" showLabel="false"/>
+                        <control idMso="FontSizeDecrease" showLabel="false"/>
+                        <control idMso="ChangeCaseGallery" showLabel="false"/>            
+                    </box>
+                    <box id="BoxText" boxStyle="horizontal">
+                        <control idMso="Bold" showLabel="false"/>
+                        <control idMso="Italic" showLabel="false"/>
+                        <control idMso="Underline" showLabel="false"/>
+                        <control idMso="Strikethrough" showLabel="false"/>
+                        <control idMso="CharacterSpacingGallery" showLabel="false"/>
+                        <control idMso="TableColumnsGallery" showLabel="false"/>
+                        <control idMso="PowerPointParagraphDialog" showLabel="false" keytip="PG"/>  
+                    </box>
+                    <box id="BoxAlignText" boxStyle="horizontal">
+                        <control idMso="AlignLeft" showLabel="false"/>
+                        <control idMso="AlignCenter" showLabel="false"/>
+                        <control idMso="AlignRight" showLabel="false"/>
+                        <control idMso="AlignJustify" showLabel="false"/>
+                        <control idMso="BulletsGallery" showLabel="false" keytip="BG"/>
+                        <control idMso="NumberingGallery" showLabel="false" keytip="NG"/>
+                        <menu id="AdditionalBullets" label="Additional Bullets" imageMso="MultilevelListGallery" showLabel="false"   keytip="TC"             
+                        screentip="Ticks and Crosses" supertip="Set multilevel lists easily or set ticks and crosses as bullet points."
+                        getEnabled="EnabledBtInfo">
+                            <menuSeparator id="SeparatorBullets" title="Multilevel List"/>
+                            <button id="Bullet_Point_1" label="First Level" imageMso="SmallIcons" onAction="Bullet_Point_1" keytip="BF"
+                            screentip="First Bullet" supertip="Create a multilevel list to organize items or create an outline.&#13;&#13;First Bullet sets the first level of the list."
+                            getEnabled="EnabledBtInfo"/>   
+                            <button id="Bullet_Point_2" label="Second Level" imageMso="SmallIcons" onAction="Bullet_Point_2"  keytip="BS"
+                            screentip="Second Bullet" supertip="Create a multilevel list to organize items or create an outline.&#13;&#13;Second Bullet sets the second level of the list."
+                            getEnabled="EnabledBtInfo"/>   
+                            <button id="Bullet_Point_3" label="Third Level" imageMso="SmallIcons" onAction="Bullet_Point_3" keytip="BT"
+                            screentip="Third Bullet" supertip="Create a multilevel list to organize items or create an outline.&#13;&#13;Third Bullet sets the third level of the list."
+                            getEnabled="EnabledBtInfo"/> 
+                            <menuSeparator id="TicksAndCrosses" title="Ticks and Crosses"/>
+                            <button id="BulletsTicks" label="Ticks" showLabel="false" imageMso="AcceptTask" onAction="TextBulletsTicks" />
+                            <button id="BulletsDashes" label="Dash" showLabel="false" imageMso="OutlineCollapse" onAction="TextBulletsDashes" /> 
+                            <button id="BulletsCrosses" label="Crosses" showLabel="false" imageMso="DeclineInvitation" onAction="TextBulletsCrosses" />  
+                        </menu>    
+                    </box>
+                    <separator id="SeparatorTextFrame" />     
+                    <control idMso="TextDirectionGallery" showLabel="false" />
+                    <control idMso="TextAlignGallery" showLabel="false" />
+                    <splitButton id="splitButton" showLabel="false">
+                    <button id="Margin_Toggle" label="Text Box Margins On/Off" getImage="RibbonObjectGetImage" onAction="Margin_Toggle" showLabel="false"  keytip="XM"
+                    screentip="Adjust Text Box" supertip="Click on the button to remove text box margins from the selected shapes.&#13;&#13;Click again to go back to default margins.&#13;&#13;Also, click on the down arrow to see all options."
+                    getEnabled="EnabledBtInfo"/>
+                    <menu   id="Adjust_Text_Box" label="Adjust Text Box" 
+                    supertip="Adjust text box configuration, such as margins, autofit, and wrap text in shape. Click on the down arrow to see all options.">
+                        <menuSeparator id="mnuSepSelectBy03" title="Adjust Text Box"/>   
+                        <button id="Margin_Toggle2" label="Text Box Margins On/Off" getImage="RibbonObjectGetImage" onAction="Margin_Toggle" showLabel="false"
+                        screentip="Text Box Margins On/Off" supertip="Click once to remove text box margins from the selected shapes.&#13;&#13;Click again to go back to default margins."
+                        getEnabled="EnabledBtInfo"/>
+                        <button id="Wrap_Text" label="Wrap Text On/Off" imageMso="WrapText" onAction="Wrap_Text" showLabel="false"
+                        screentip="Wrap Text On/Off" supertip="Click once to wrap text in selected shapes.&#13;&#13;Click again to go back to default configuration."
+                        getEnabled="EnabledBtInfo"/>
+                        <menuSeparator id="separator" />
+                        <button id="Do_Not_Autofit" label="Do Not AutoFit" imageMso="CancelRequest" onAction="Do_Not_Autofit" showLabel="false"
+                        screentip="Do Not Autofit" supertip="Click to turn off autofit in selected shapes."
+                        getEnabled="EnabledBtInfo"/>
+                        <button id="Shape_Fit_Text" label="Resize Shape to Fit Text" imageMso="SizeToFit" onAction="Shape_Fit_Text" showLabel="false"
+                        screentip="Resize Shape to Fit Text" supertip="Click to fit shape to text in selected shapes."
+                        getEnabled="EnabledBtInfo"/>
+                        <button id="Text_Overflow" label="Shrink Text on Overflow" imageMso="TextAlignStretchJustify" onAction="Text_Overflow" showLabel="false"
+                        screentip="Shrink Text on Overflow" supertip="Click to shrink text on overflow in selected shapes."
+                        getEnabled="EnabledBtInfo"/>
+                    </menu>
+                    </splitButton>
+                </group >
+                <group id="GroupFormat" label="Format" imageMso="ShapeFillColorPicker"> 
+                    <control idMso="FontColorPicker" showLabel="false" />
+                    <control idMso="ShapeFillColorPicker" showLabel="false" />
+                    <control idMso="ShapeOutlineColorPicker" showLabel="false" keytip="SO"/>
+                    <control idMso="TextHighlightColorPickerLicensed" showLabel="false" keytip="TH"/>
+                    <control idMso="TextOutlineColorPicker" showLabel="false" keytip="TO"/>
+                    <control idMso="TextEffectsMenu" showLabel="false" keytip="TE"/>
+                    <control idMso="ObjectEditShapeMenu" showLabel="false"/>
+                    <control idMso="ShapeEffectsMenu" showLabel="false" />
+                    <control idMso="FormatPainter" showLabel="false" />
+                    <separator id="SeparatorSelectReplaceConnect" /> 
+                    <menu   id="Select_Objects" label="Select Similar Objects" getImage="RibbonObjectGetImage" showLabel="false" description="test" keytip="SSO"
+                    screentip="Select Objects" supertip="Select all the objects on the current slide that match a property of the first selected object.&#13;&#13;Note: PowerPoint can't select objects inside groups."
+                    getEnabled="EnabledBtInfo">
+                        <menuSeparator id="SeparatorSelect" title="Select Objects with the Same"/>
+                        <button id="Select_Similar_Fill_Color" label="Fill Color" image="ShapeFillColor" onAction="Select_Similar_Fill_Color"/>
+                        <button id="Select_Similar_Line_Color" label="Line Color" image="OutlineFillColor" onAction="Select_Similar_Line_Color"/>
+                        <button id="Select_Similar_Font_Color" label="Font Color" image="FontFillColor" onAction="Select_Similar_Font_Color"/>        
+                    </menu>
+                    <menu   id="Replace_Colors" label="Replace Colors"  imageMso="TextGlowColorPicker" showLabel="false" keytip="RPC"
+                    screentip="Replace Colors" supertip="Replace objects' colors from the selected slides.&#13;&#13;Choose a color to be replaced using the Strator color picker; then, choose the new color.&#13;&#13;Important: Strator finds and replaces colors with exact specified values. Check the correct values before using them. Some colors, although look exactly the same, may have different values.&#13;&#13;Tip: Select the shape you want to replace the color and click on 'More Colors...' to see the exact code of the color you want to replace."
+                    getEnabled="EnabledBtInfo">
+                        <menuSeparator id="SeparatorReplace" title="Replace from Selected Slides"/>
+                        <button id="Replace_All_Colors" label="All Colors" imageMso="SchemeColorsGallery" onAction="Replace_All_Colors" />   
+                        <button id="Replace_Fill_Colors" label="Fill Colors" image="ShapeFillColor" onAction="Replace_Fill_Colors" />
+                        <button id="Replace_Line_Colors" label="Line Colors" image="OutlineFillColor" onAction="Replace_Line_Colors"/>
+                        <button id="Replace_Font_Colors" label="Font Colors" image="FontFillColor" onAction="Replace_Font_Colors" />                     
+                    </menu>
+                    <menu id="ConnectRectanglesMenu" label="Connect Sides of Two Shapes" imageMso="ControlSpecialEffectShadowed" showLabel="false" keytip="CNR"
+                    screentip="Connect Sides of Two Shapes" supertip="Add shape to create the effect of connection between two selected shapes."
+                    getEnabled="EnabledBtInfo">
+                        <menuSeparator id="SeparatorConnect" title="Connect Based on the Selected Shapes"/>
+                        <button id="ConnectRectangleShapesRightToLeft" label="Shape 1 Right Side to Shape 2 Left Side" imageMso="LeftToRightEmbedding" onAction="ConnectRectangleShapesRightToLeft" />
+                        <button id="ConnectRectangleShapesLeftToRight" label="Shape 1 Left Side to Shape 2 Right Side" imageMso="RightToLeftEmbedding" onAction="ConnectRectangleShapesLeftToRight" />
+                        <button id="ConnectRectangleShapesBottomToTop" label="Shape 1 Bottom Side to Shape 2 Top Side" imageMso="MessagePrevious" onAction="ConnectRectangleShapesBottomToTop" />
+                        <button id="ConnectRectangleShapesTopToBottom" label="Shape 1 Top Side to Shape 2 Bottom Side" imageMso="MessageNext" onAction="ConnectRectangleShapesTopToBottom" />
+                    </menu> 
+                    <separator id="SeparatorTableClone" />
+                    <menu id="TableConfig" imageMso="TablePropertiesDialog" label="Table Configuration" showLabel="false" keytip="TBC"
+                    getEnabled="EnabledBtInfo" >
+                        <button id="TableConvertTableToShapes" imageMso="TaskSplit" label="Convert Table to Shapes" onAction="ConvertTableToShapes" /> 
+                        <menuSeparator id="SeparatorColumnGaps" title="Create Column Gaps" />
+                        <splitButton id="TableColumnGapsSplitButton" >
+                            <button id="TableColumnGapsEven" imageMso="SpeakByRows" label="Add column gaps"  onAction="TableColumnGapsEven" />
+                            <menu id="TableColumnGapsMenu" itemSize="normal">
+                                <button id="TableColumnGapsOdd" imageMso="SpeakByRows" label="Add column gaps (including left and right sides)"  onAction="TableColumnGapsOdd" />
+                                <button id="TableColumnRemoveGaps" imageMso="Delete" label="Remove column gaps"  onAction="TableColumnRemoveGaps" />
+                            </menu>
+                        </splitButton>
+                        <button id="TableColumnIncreaseGaps" label="Increase column gaps"  imageMso="UpArrow2" onAction="TableColumnIncreaseGaps" />
+                        <button id="TableColumnDecreaseGaps" label="Decrease column gaps"  imageMso="DownArrow2" onAction="TableColumnDecreaseGaps" />
+                        <menuSeparator id="SeparatorRowGaps" title="Create Row Gaps" />
+                        <splitButton id="TableRowGapsSplitButton">
+                            <button id="TableRowGapsEven" imageMso="SpeakByColumns" label="Add Row Gaps"  onAction="TableRowGapsEven" />
+                            <menu id="TableRowGapsMenu" itemSize="normal">
+                                <button id="TableRowGapsOdd" imageMso="SpeakByColumns" label="Add Row Gaps (including top and bottom sides)"  onAction="TableRowGapsOdd" />
+                                <button id="TableRowRemoveGaps" imageMso="Delete" label="Remove Row Gaps"  onAction="TableRowRemoveGaps" />
+                            </menu>
+                        </splitButton>
+                        <button id="TableRowIncreaseGaps" label="Increase row gaps" showLabel="false" imageMso="UpArrow2" onAction="TableRowIncreaseGaps" />
+                        <button id="TableRowDecreaseGaps" label="Decrease row gaps" showLabel="false" imageMso="DownArrow2" onAction="TableRowDecreaseGaps" />
+                    </menu>
+                    <button id="CloneSelectionRight" label="Clone Selection to Right" imageMso="ObjectNudgeRight" onAction="ObjectsCloneRight" showLabel="false" keytip="CSR"
+                    getEnabled="EnabledBtInfo"/>
+                    <button id="CloneSelectionDown" label="Clone Selection Down" imageMso="ObjectNudgeDown" onAction="ObjectsCloneDown" showLabel="false" keytip="CSB"
+                    getEnabled="EnabledBtInfo"/>         
+                </group>             
+                <group id="GroupAlign" label="Align" imageMso="ObjectsAlignLeftSmart">
+                    <control idMso="ObjectsAlignTopSmart" showLabel="false" keytip="AAT"/>
+                    <control idMso="ObjectsAlignBottomSmart" showLabel="false" keytip="AAB"/>
+                    <control idMso="ObjectsAlignMiddleVerticalSmart" showLabel="false" keytip="AAM"/>
+                    <control idMso="ObjectsAlignLeftSmart" showLabel="false" keytip="AAL"/>
+                    <control idMso="ObjectsAlignRightSmart" showLabel="false" keytip="AAR"/>             
+                    <control idMso="ObjectsAlignCenterHorizontalSmart" showLabel="false" keytip="AAC"/>
+                    <separator id="separator5" /> 
+                    <control idMso="AlignDistributeHorizontally" showLabel="false" keytip="AAH"/>
+                    <button id="Increase_Horizontal_Spacing" label="Increase Horizontal Spacing" imageMso="HorizontalSpacingIncrease" onAction="Increase_Horizontal_Spacing" showLabel="false" keytip="IHS"
+                    getEnabled="EnabledBtInfo"/> 
+                    <button id="Decrease_Horizontal_Spacing" label="Decrease Horizontal Spacing" imageMso="HorizontalSpacingDecrease" onAction="Decrease_Horizontal_Spacing" showLabel="false" keytip="DHS"
+                    getEnabled="EnabledBtInfo"/> 
+                    <control idMso="AlignDistributeVertically" showLabel="false" keytip="AAV"/>
+                    <button id="Increase_Vertical_Spacing" label="Increase Vertical Spacing" imageMso="VerticalSpacingIncrease" onAction="Increase_Vertical_Spacing" showLabel="false" keytip="IVS"
+                    getEnabled="EnabledBtInfo"/> 
+                    <button id="Decrease_Vertical_Spacing" label="Decrease Vertical Spacing" imageMso="VerticalSpacingDecrease" onAction="Decrease_Vertical_Spacing" showLabel="false" keytip="DVS"
+                    getEnabled="EnabledBtInfo"/>              
+                    <separator id="separator6" />
+                    <splitButton id="Swap_Positions" showLabel="false" keytip="SWP"
+                    getEnabled="EnabledBtInfo">
+                        <button id="Swap_Center" label="Swap Positions by Center" getImage="RibbonObjectGetImage" onAction="Swap_Center" showLabel="false"  
+                        screentip="Swap Positions" supertip="Swap positions of two selected objects by their center reference.&#13;&#13;Click on the down arrow to swap by other references." />
+                        <menu   id="Swap_Positions_Menu" label="Swap Positions Menu" 
+                        supertip="Swap the position of two selected objects by the selected reference.">
+                            <menuSeparator id="mnuSepSelectBy04" title="Swap Objects by Position "/>   
+                            <button id="Swap_TopLeft" label="Top and Left" image="SwapTopLeft" onAction="Swap_TopLeft" />
+                            <button id="Swap_TopCenter" label="Top and Center" image="SwapTopCenter" onAction="Swap_TopCenter" />
+                            <button id="Swap_TopRight" label="Top and Right" image="SwapTopRight" onAction="Swap_TopRight" />
+                            <button id="Swap_MiddleLeft" label="Middle and Left" image="SwapMiddleLeft" onAction="Swap_MiddleLeft" />
+                            <button id="Swap_Center2" label="Center" image="SwapCenter" onAction="Swap_Center"/>
+                            <button id="Swap_MiddleRight" label="Middle and Right" image="SwapMiddleRight" onAction="Swap_MiddleRight" />
+                            <button id="Swap_BottomLeft" label="Bottom and Left" image="SwapBottomLeft" onAction="Swap_BottomLeft" />
+                            <button id="Swap_BottomCenter" label="Bottom and Center" image="SwapBottomCenter" onAction="Swap_BottomCenter" />
+                            <button id="Swap_BottomRight" label="Bottom and Right" image="SwapBottomRight" onAction="Swap_BottomRight" />
+                            <button id="Swap_Text" label="Text Without Formatting" imageMso="InkCovertToTextVisio" onAction="Swap_Text_NoFormat"
+                            getEnabled="EnabledBtInfo"/>
+                        </menu>
+                    </splitButton>
+                    <menu id="Stack_Objects" label="Stack Objects" getImage="RibbonObjectGetImage" showLabel="false" keytip="STK"
+                    screentip="Stack Objects" supertip="Stack objects based on the position of the first selected object.">             
+                        <button id="Stack_Top" label="Stack Above" imageMso="MessagePrevious" onAction="Stack_Top" showLabel="false"
+                        screentip="Stack Above" supertip="Stack objects above the first selected object. The bottom line of succeeding objects will match the top line of the previous one." 
+                        getEnabled="EnabledBtInfo"/>
+                        <button id="Stack_Bottom" label="Stack Bellow" imageMso="MessageNext" onAction="Stack_Bottom" showLabel="false"
+                        screentip="Stack Bellow" supertip="Stack objects bellow the first selected object. The top line of succeeding objects will match the bottom line of the previous one." 
+                        getEnabled="EnabledBtInfo"/>                    
+                        <button id="Stack_Left" label="Stack Left" imageMso="LeftToRightEmbedding" onAction="Stack_Left" showLabel="false"
+                        screentip="Stack Left" supertip="Stack objects left the first selected object. The right line of succeeding objects will match the left line of the previous one."
+                        getEnabled="EnabledBtInfo"/>
+                        <button id="Stack_Right" label="Stack Right" imageMso="RightToLeftEmbedding" onAction="Stack_Right" showLabel="false"
+                        screentip="Stack Right" supertip="Stack objects right the first selected object. The left line of succeeding objects will match the right line of the previous one."
+                        getEnabled="EnabledBtInfo"/>
+                    </menu>
+                    <button id="Objects_Corner" label="Adjust Angles" showLabel="false" getImage="RibbonObjectGetImage" onAction="ObjectsCopyRoundedCorner" keytip="ASC"
+                    screentip="Adjust Angles" supertip="Copy angles of first selected shape to other selected shapes."
+                    getEnabled="EnabledBtInfo"/>
+                </group >  
+                <group id="GroupSize" label="Size" imageMso="ShapeHeight"> 
+                    <control idMso="PictureCropTools" showLabel="false" />
+                    <button id="RectifyLines" label="Rectify Lines" showLabel="false" imageMso="RulerShowHide" onAction="RectifyLines" keytip="RCL"
+                    screentip="Rectify Lines" supertip="Rectify selected lines to the default horizontal or vertical position ."
+                    getEnabled="EnabledBtInfo"/>
+                    <control idMso="ObjectSizeAndPositionDialog" imageMso="MoreControlsDialog" showLabel="false" />   
+                    <separator id="SeparatorSize" /> 
+                    <control idMso="ShapeHeight" showLabel="false" keytip="H" />
+                    <control idMso="ShapeWidth" showLabel="false" keytip="W"/>
+                    <box id="SeparatorResize" boxStyle="horizontal">
+                        <button id="Resize_Height" label="Match Height" imageMso="RowHeight" onAction="Resize_Height" showLabel="false" keytip="OMH"
+                        screentip="Match Height" supertip="Make selected objects the same height.&#13;&#13;All objects take the height of the first object you selected as a reference."
+                        getEnabled="EnabledBtInfo"/> 
+                        <button id="Resize_Width" label="Match Width" imageMso="ColumnWidth" onAction="Resize_Width" showLabel="false" keytip="OMW"
+                        screentip="Match Width" supertip="Make selected objects the same width.&#13;&#13;All objects take the width of the first object you selected as a reference."
+                        getEnabled="EnabledBtInfo"/>   
+                        <button id="Resize_Shapes" label="Match Size" imageMso="SizeToControlHeightAndWidth" onAction="Resize_Shapes" showLabel="false" keytip="OMS"
+                        screentip="Match Size" supertip="Make selected objects the same size (i.e., height and width).&#13;&#13;All objects take the size of the first object you selected as a reference."
+                        getEnabled="EnabledBtInfo"/> 
+                        <toggleButton id="LockUnlock" label="Lock Aspect Ratio" imageMso="Lock" onAction="Lock_and_Unlock" getPressed="getPressedStyleBtn" showLabel="false" keytip="OAR"
+                        screentip="Lock Aspect Ratio" supertip="Lock/Unlock the aspect ratio of selected objects."
+                        getEnabled="EnabledBtInfo"/>    
+                    </box>
+                </group >     
+                <group id="GroupOrganize" label="Organize" imageMso="ObjectsGroup"> 
+                    <control idMso="ObjectRotateRight90" showLabel="false"  keytip="GOR"/>
+                    <control idMso="ObjectFlipHorizontal" showLabel="false" keytip="FH"/>             
+                    <control idMso="ObjectFlipVertical" showLabel="false" keytip="FV"/>
+                    <separator id="SeoaratorGroupBring" />    
+                    <control idMso="ObjectsGroup" showLabel="false" keytip="GP" />
+                    <control idMso="ObjectBringForward" showLabel="false" keytip="GF"/>
+                    <control idMso="ObjectBringToFront" showLabel="false" keytip="GR"/>
+                    <control idMso="ObjectsUngroup" showLabel="false" keytip="GU"/> 
+                    <control idMso="ObjectSendBackward" showLabel="false" keytip="GB" />
+                    <control idMso="ObjectSendToBack" showLabel="false" keytip="GK"/>
+                    <separator id="SeparatorSelectionPane" />    
+                    <button id="Hide_Objects" label="Hide Selected Objects" image="HideSelectedObjects" onAction="Hide_Objects" showLabel="false" keytip="OH"
+                    screentip="Hide Selected Objects" supertip="Hide the selected objects.&#13;&#13;This function is useful when dealing with multiple objects in top of each other."
+                    getEnabled="EnabledBtInfo"/> 
+                    <button id="Show_All_Objects" label="Show All Objects on Selected Slides" image="ShowAllObjects" onAction="Show_All_Objects" showLabel="false" keytip="OSA"
+                    screentip="Show All Objects on Selected Slides" supertip="Show all hidden objects on the selected slides.&#13;&#13;This function shows all objects hidden through the 'Hide Selected Objects' function or the 'Selection Pane'."
+                    getEnabled="EnabledBtInfo"/> 
+                    <control idMso="SelectionPane" showLabel="false" />                                                   
+                </group >       
+                <group id="GroupMerge" label="Merge" imageMso="CombineShapesGallery"> 
+                    <button id="Merge_Text_Boxes" label="Merge Text" getImage="RibbonObjectGetImage" onAction="Merge_Text_Boxes" showLabel="true" keytip="MTB"
+                    screentip="Merge Text" supertip="Merge text within selected objects into a single object. Text will be merged into the first shape you selected. Original text formatting is retained."
+                    getEnabled="EnabledBtInfo"/>
+                    <button id="Split_Text_Boxes" label="Split Text" getImage="RibbonObjectGetImage" onAction="Split_Text_Boxes" showLabel="true" keytip="STB"
+                    screentip="Split Text" supertip="Split text between multiple objects by paragraph. Keeps the original text and object formatting.&#13;&#13;Bulleted and numbered list items are considered paragraphs."
+                    getEnabled="EnabledBtInfo"/>
+                    <control idMso="CombineShapesGallery" showLabel="true" keytip="MS" />
+                </group > 
+                <group id="GroupText" label="Text" imageMso="SetLanguage"> 
+                    <control idMso="FontsReplaceFonts" label="Replace Fonts" keytip="RF"/>
+                    <control idMso="Translator" label="Translate" keytip="TRT" />
+                    <menu id="Language" image="LanguageUS" label="Language" keytip="PRL" 
+                    screentip="Change Proofing Language" supertip="Change language on all slides alternating between Portuguese (Brazil), English (US), and Spanish."
+                    getEnabled="EnabledBtInfo">
+                        <button id="Language_US" label="English (US)" image="LanguageUS" showLabel="true" onAction="Language_US"/>
+                        <button id="Language_BR" label="Portuguese (Brazil)" image="LanguageBR" showLabel="true" onAction="Language_BR"/>
+                        <button id="Language_ES" label="Spanish (Spain)" showLabel="true"  image="LanguageES" onAction="Language_ES"/>
+                        <control idMso="SetLanguage" showLabel="true" /> 
+                    </menu>
+                </group >                        
+                <group id="GroupClean" label="Finish Up" imageMso="QueryBuilder"> 
+                    <menu  id="CleanDeck" label="Clean Deck" imageMso="ReviewDeleteMarkup" keytip="CLN"
+                    screentip="Clean Deck" supertip="Delete confidential information and optimize file size by compressing pictures and deleting unwanted layouts, shapes, comments, notes, animations, and transitions."
+                    getEnabled="EnabledBtInfo">
+                        <menuSeparator id="CleanText" title="Line Breaks and Double Spaces"/>
+                        <button id="Remove_Line_Break" label="Remove Line Breaks" imageMso="StylesStyleSeparator" onAction="Remove_Line_Break" 
+                        screentip="Remove Line Breaks" supertip="Remove all line breaks from a selected shape."
+                        getEnabled="EnabledBtInfo"/>
+                        <button id="Remove_Spaces" label="Remove Double Spaces from Selected Slides" imageMso="ShowNbspMark" onAction="Remove_Spaces"
+                        screentip="Remove Double Spaces from Selected Slides" supertip="Searches all double spaces in the selected slides and replaces them with single spaces."
+                        getEnabled="EnabledBtInfo"/>
+                        <menuSeparator id="ExportMenuSeparator" title="Export Notes and Comments"/>
+                        <button id="Export_Comments_Text" label="Export Comments to Text File" image="ExportComments" onAction="Export_Comments_Text" showLabel="false" 
+                        screentip="Export Comments to Text File" supertip="Extract all comments from all slides in this presentation and save to a text file."  />
+                        <button id="Export_Notes_Text" label="Export Notes to Text File" image="ExportNotes" onAction="Export_Notes_Text" showLabel="false"
+                        screentip="Export Notes to Text File" supertip="Extract all notes from all slides in this presentation and save to a text file."  />
+                        <menuSeparator id="FixFooterSlideNumber" title="Fix Slide Footers and Slide Numbers"/>
+                        <button id="Fix_Footers" label="Fix Slide Footers" showLabel="true" imageMso="HeaderFooterEditFooter" onAction="Fix_Footers"/>
+                        <button id="Fix_Slide_Numbers" label="Fix Slide Numbers" showLabel="true" imageMso="HeaderFooterPageNumberInsert" onAction="Fix_Slide_Numbers"/>
+                        <control idMso="HeaderFooterInsert" showLabel="true" /> 
+                        <menuSeparator id="ClenDeckMenuSeparator" title="Delete Unwanted Properties"/>
+                        <control idMso="Spelling"/> 
+                        <button id="CompressPicture" label="Compress Pictures" imageMso="PicturesCompress" onAction="CompressPicture"
+                        screentip="Compress Pictures" supertip="Finds the first picture in the presentation and activates PowerPoint's 'Compress Pictures' function.&#13;&#13;Tip: This function behaves differently than PowerPoint's. It doesn't require the selection of a picture before activating 'Compress Pictures'. Instead, it searches for the first picture in the presentation and activates the function automatically."/> 
+                        <button id="Delete_Empty_Shapes" label="Delete Empty Shapes" imageMso="Delete" onAction="Delete_Empty_Shapes"
+                        screentip="Delete Empty Shapes" supertip="Delete empty shapes (i.e., no fill, no line, and no text) from all slides.&#13;&#13;This function doesn't apply to placeholders (e.g., titles, footers, headers) or empty shapes within groups."/>
+                        <button id="Delete_All_Sticky_Notes" label="Delete All Sticky Notes" imageMso="ReviewDeleteAllMarkupOnSlide" onAction="DeleteStickyNotesOnAllSlides"
+                        screentip="Delete All Sticky Notes" supertip="Delete all sticky notes in the presentation."/>
+                        <button id="Delete_All_Comments" label="Delete All Comments" imageMso="ReviewDeleteComment" onAction="Remove_All_Comments"
+                        screentip="Delete All Comments" supertip="Delete all comments in the presentation."/>
+                        <button id="Delete_All_Notes" label="Delete All Notes" image="DeleteNotes" onAction="Remove_All_Notes"
+                        screentip="Delete All Notes" supertip="Delete all speaker notes in all slides."/> 
+                        <button id="Delete_All_Animations" label="Delete All Animations" image="DeleteAnimations" onAction="Remove_All_Animations"
+                        screentip="Delete All Animations" supertip="Delete all animations in the presentation."/> 
+                        <button id="Delete_All_Transitions" label="Delete All Transitions" image="TransitionDelete" onAction="Remove_Transitions"
+                        screentip="Delete All Transitions" supertip="Delete all transitions in all slides."/>
+                        <button id="Delete_Unused_Layouts" label="Delete Unused Layouts" imageMso="SlideDelete" onAction="Remove_Unused_Layouts"
+                        screentip="Delete Unused Layouts" supertip="Delete unused layouts from slide master."/>
+                        <menuSeparator id="Confidentiality" title="Confidentiality Settings"/>
+                        <control idMso="AdvancedFileProperties" label="Edit Document Properties"/>
+                        <button id="anonymize" label="Anonymize Selected Slides with Lorem Ipsum" imageMso="Clear" onAction="AnonymizeWithLoremIpsum" />  
+                    </menu>
+                    <menu id="StampsMenu" label="Label Slides" imageMso="NameDefine"  showLabel="true" keytip="LBL"
+                    screentip="Stamp Slides" supertip="Create labels to indicate status or clarify content and slides."
+                    getEnabled="EnabledBtInfo"> 
+                        <menuSeparator id="StampSMenuSeparator" title="Label Selected Slide"/>
+                        <button id="StampS_Draft" label="DRAFT" showLabel="true" imageMso="NameDefine"  onAction="StampS_Draft"/>
+                        <button id="StampS_Preliminary" label="PRELIMINARY" showLabel="true" imageMso="NameDefine"  onAction="StampS_Preliminary"/>
+                        <button id="StampS_New" label="NEW" showLabel="true" imageMso="NameDefine" onAction="StampS_New"/>
+                        <button id="StampS_Updated" label="UPDATED" showLabel="true" imageMso="NameDefine"  onAction="StampS_Updated"/>
+                        <button id="StampS_Remove" label="TO BE REMOVED" showLabel="true" imageMso="NameDefine"  onAction="StampS_Remove"/>
+                        <button id="StampS_Front" label="Bring Slide Labels to Front" imageMso="SendReceiveAll" showLabel="true" onAction="StampS_Front"/>
+                        <button id="StampS_Delete" label="Remove All Slide Labels" imageMso="Delete" showLabel="true" onAction="StampS_Delete"/>
+                        <menuSeparator id="StampCMenuSeparator" title="Label Content"/>
+                        <button id="StampC_Draft" label="DRAFT" showLabel="true" imageMso="InsertHR" onAction="StampC_Draft" />
+                        <button id="StampC_Preliminary" label="PRELIMINARY" showLabel="true" imageMso="InsertHR"  onAction="StampC_Preliminary"/>
+                        <button id="StampC_Illustrative" label="ILLUSTRATIVE" showLabel="true" imageMso="InsertHR"  onAction="StampC_Illustrative"/>
+                        <button id="StampC_Not_Exhaustive" label="NOT EXHAUSTIVE" showLabel="true" imageMso="InsertHR"  onAction="StampC_Not_Exhaustive"/>
+                        <button id="StampC_Discussion" label="FOR DISCUSSION" showLabel="true" imageMso="InsertHR"  onAction="StampC_Discussion"/>
+                    </menu>                    
+                    <menu id="ClassifyMenu" label="Classify Document" getImage="RibbonObjectGetImage" showLabel="true" keytip="CD"
+                    screentip="Classify Document" supertip="Classify document in terms of work progress or access restriction."> 
+                        <menuSeparator id="ClassifyMenuSeparator" title="Classify Document"/>
+                        <button id="StampD_Draft" label="DRAFT MATERIAL" showLabel="true" imageMso="StampTool" onAction="StampD_Draft"/>
+                        <button id="StampD_Preliminary" label="PRELIMINARY MATERIAL" showLabel="true" imageMso="StampTool" onAction="StampD_Preliminary"/>
+                        <button id="StampD_Confidential" label="CONFIDENTIAL MATERIAL" showLabel="true" imageMso="StampTool" onAction="StampD_Confidential"/>
+                        <button id="StampD_Distibute" label="DO NOT DISTRIBUTE" showLabel="true" imageMso="StampTool" onAction="StampD_Distibute"/>
+                        <button id="StampD_Internal" label="FOR INTERNAL USE ONLY" showLabel="true" imageMso="StampTool" onAction="StampD_Internal"/>
+                        <button id="StampD_Update" label="Update Stamp Based on the Selected One" imageMso="SendReceiveAll" showLabel="true" onAction="StampD_Update"
+                        getEnabled="EnabledBtInfo"/>
+                        <button id="StampD_Delete" label="Remove Stamp" imageMso="Delete" showLabel="true" onAction="StampD_Delete"/>
+                        <menuSeparator id="WatermarkMenuSeparator" title="Watermark"/>
+                        <button id="Watermark_Add" label="Insert Watermark" imageMso="WatermarkCustomDialog" onAction="Watermark_Add" />
+                        <button id="Watermark_Delete" label="Remove Watermark" imageMso="Delete" onAction="Watermark_Delete" />
+                    </menu>
+                </group >           
+                <group id="GroupAbout" label="About" imageMso="ResultsPaneAccessibilityMoreInfo" > 
+                    <button id="About" label="About Strator" showLabel="false" getImage="RibbonObjectGetImage" onAction="About" keytip="PDK"/>
+                    <button id="ActivateStratorTab" label="Go To Strator Tab" imageMso="OfficeExtensionsFeaturedApp1" onAction="ActivateStratorTab" visible="false" />
+                    <button id="Grid_Shapes" label="Create Grid of Shapes" onAction="Grid_Shapes" imageMso="TableSelectVisibleCells" showLabel="false" visible="false"
+                    screentip="Create Grid of Shape" supertip="Split the selected object into evenly sized copies of itself.&#13;&#13;Inform the number of columns and rows in which the object will be divided."
+                    getEnabled="EnabledBtInfo"/>   
+                </group >                     
+            </tab> 
+        </tabs> 
+    </ribbon> 
+</customUI>
