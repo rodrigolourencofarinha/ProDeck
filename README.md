@@ -2,9 +2,11 @@
 
 ProDeck is a PowerPoint add-in designed to help those who work extensively with PowerPoint, such as consultants. It provides a suite of tools to quickly assemble, format, and clean slide decks. While many paid products offer similar or more advanced functionalities, ProDeck was created to democratize access to these tools for individuals and small companies that may not have the budget for expensive software. ProDeck offers several features to help users edit slides more efficiently, saving valuable time.
 
+![ProDeck Toolbar](assets/ProDeck_v1.5.0_Toolbar.png)
+
 ## Why I Created This
 
-I tested several commercial options like [Power-User](https://www.powerusersoftwares.com/) and [BrightSlide](https://www.brightcarbon.com/brightslide/), but found they either didn’t offer the exact features I needed or were overloaded with unnecessary tools. I also tried other free and open-source alternatives, but they were often too rough and riddled with bugs.
+As a project manager at a strategy consulting firm, I quickly learned that a well-designed toolbar can save hours of work. I tested several commercial options like [Power-User](https://www.powerusersoftwares.com/) and [BrightSlide](https://www.brightcarbon.com/brightslide/), but found they either didn’t offer the exact features I needed or were overloaded with unnecessary tools. I also tried other free and open-source alternatives, but they were often too rough and riddled with bugs.
 
 With that in mind, I developed ProDeck based on three core principles:
 1. **Simplicity**: Include only the essential functions most users need, avoiding unnecessary complexity.
