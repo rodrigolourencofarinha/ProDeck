@@ -18,11 +18,38 @@ With that in mind, I developed ProDeck based on three core principles:
 - **Microsoft Office**: ProDeck was developed for the latest version of Office, but it may work on older versions with potential bugs.
 - **Windows or Mac**: While ProDeck works on both Windows and Mac, it performs better on Windows. In the future, I plan to release a Mac-specific version to address certain features and characteristics.
 
-## How You Can Contribute
+## Features 
 
-You are welcome to submit issues and bug reports via this GitHub repository. I will review them whenever I can.
+Below are some key features, though not all are listed.
 
-## Tutorials
+| Icon                                                                                                           | Feature                                                   | Description                                                                                |
+|----------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------|--------------------------------------------------------------------------------------------|
+| ![Batch Add or Delete](assets/features/BatchAddDelete.png)                                                     | Batch Add or Delete                                       | Add/Delete objects from all slides.                                                        |
+| ![Insert Sticky Note](assets/features/GenerateStickyNote.png)                                                  | Insert Sticky Note                                        | Insert a sticky note on the slide                                                          |
+| ![Insert Headings](assets/features/Headings.png)                                                               | Insert Headings                                           | Insert multiple headings                                                                   |
+| ![Insert or Reposition Footnote](assets/features/Footnotes.png)                                                | Insert or Reposition Footnote                             | Insert or reposition footnote                                                              |
+| ![Multilevel Bullet Points](assets/features/MultilevelBulletPoint.png)                                         | Multilevel Bullet Points                                  | Set multilevel bullet points, ticks or crosses                                             |
+| ![Text Box Margins On/Off](assets/features/MarginToggle.png)                                                   | Text Box Margins On/Off                                   | Toggle text box margins on/off                                                             |
+| ![Fill Color](assets/features/SelectSimilarFillColor.png)                                                      | Fill Color                                                | Select all objects with the same color                                                     |
+| ![All Colors](assets/features/ReplaceAllColors.png)                                                            | All Colors                                                | Replace colors in selected slides                                                          |
+| ![Connect Shapes](assets/features/ConnectShapes.png)                                                           | Connect Shapes                                            | Connect side of shape 1 to the side of shape 2                                             |
+| ![Increase or Decrease Spacing](assets/features/IncreaseDecreaseSpacing.png)                                   | Increase or Decrease Spacing                              | Increase or decrease spacing between objects                                               |
+| ![Swap Positions](assets/features/SwapObjects.png)                                                             | Swap Positions                                            | Swap positions of selected objects                                                         |
+| ![Stack Objects](assets/features/StackObjects.png)                                                             | Stack Objects                                             | Stack objects based on the first selected object                                           |
+| ![Match Size](assets/features/ResizeObjects.png)                                                               | Match Size                                                | Resize selected objects to match size (height and/or width)                                |
+| ![Rectify Lines](assets/features/RectifyLines.png)                                                             | Rectify Lines                                             | Rectify lines to default horizontal or vertical positions                                  |
+| ![Merge or Split Text](assets/features/MergeSplit.png)                                                         | Merge or Split Text                                       | Merge or split text within selected objects into one object                                |
+| ![Hide or Unhide Objects](assets/features/HideUnhide.png)                                                      | Hide or Unhide Objects                                    | Hide or unhide objects in the slide                                                        |
+| ![Change Language](assets/features/ChangeLanguage.png)                                                         | Change Language                                           | Change proofing language in the entire deck                                                |
+| ![Remove Line Breaks and Double Spaces from Selected Slides](assets/features/RemoveLineBrakesDoubleSpaces.png) | Remove Line Breaks and Double Spaces from Selected Slides | Remove all line breaks from a selected shape and remove double spaces from selected slides |
+| ![Export Notes and Comments](assets/features/ExportNotesComments.png)                                          | Export Notes and Comments                                 | Export notes and comments from all slides to a text file                                   |
+| ![Fix Slider Footers and Slide Numbers](assets/features/FixSlideFootersNumbers.png)                            | Fix Slider Footers and Slide Numbers                      | Fix slide footers or numbers                                                               |
+| ![Delete Unwanted Properties](assets/features/DeleteUnwantedProperties.png)                                    | Delete Unwanted Properties                                | Delete animations, comments, transitions and many others                                   |
+| ![Confidentiality  Settings](assets/features/ConfidentialitySettings.png)                                      | Confidentiality  Settings                                 | Anonymize and erase metadata                                                               |
+| ![Label Slides](assets/features/LabelSlides.png)                                                               | Label Slides                                              | Label slides and contents                                                                  |
+| ![Classify Document](assets/features/ClassifyDocument.png)                                                     | Classify Document                                         | Put mark on all slides regarding the document classification                               |
+
+## Installing & Uninstalling
 
 ### Installation Instructions
 
@@ -53,7 +80,7 @@ A step-by-step guide to installing **ProDeck** in PowerPoint:
    - Select the file and click **Open**.
 4. **Enable Macros**: Ensure macros are enabled for full functionality of ProDeck.
 
-#### Uninstallation Instructions
+### Uninstallation Instructions
 
 A step-by-step guide to uninstalling **ProDeck**:
 
@@ -69,19 +96,23 @@ A step-by-step guide to uninstalling **ProDeck**:
 
 For both **Windows** and **Mac**, these steps will ensure a smooth installation and uninstallation process.
 
-### How to Develop Your Own
+## How You Can Contribute
+
+You are welcome to submit issues and bug reports via this GitHub repository. I will review them whenever I can.
+
+## How to Develop Your Own
 
 You have three alternatives based on your skill level:
 
-#### For Beginners:
+### For Beginners:
    1. **Build from the `.pptm` file**: 
      - I suggest this approach if you are just starting out and want to use or customize the existing code without diving too deeply into VBA or advanced development.
 
-#### For Advanced Users:
+### For Advanced Users:
    2.  **Fork this repo**: If you are familiar with Git and want to customize the project, you can fork this repository.
    3. **Build your own `.pptm` file**:You can start from scratch or use this repo as a base and develop your own `.pptm` (PowerPoint Macro-Enabled Presentation) file, adding or modifying the macros to suit your needs.
 
-### How to Edit the Code:
+## How to Edit the Code:
 To edit the macros and custom functionality within the `.pptm` file, follow these steps:
 
 1. **Enable the Developer Tab in the Ribbon**: If you don't already have the Developer tab visible, activate it by following [this guide](https://support.microsoft.com/en-us/office/show-the-developer-tab-in-word-e356706f-1891-4bb8-8d72-f57a51146792).
@@ -98,7 +129,7 @@ To edit the macros and custom functionality within the `.pptm` file, follow thes
     
 4. **Edit the Ribbon:** Download the [Office RibbonX Editor](https://github.com/fernandreu/office-ribbonx-editor) to edit the ribbon
 
-#### Additional Resources:
+### Additional Resources:
 - [VBA Documentation](https://docs.microsoft.com/en-us/office/vba/api/overview/powerpoint) – Microsoft's official documentation for PowerPoint VBA.
 - [StackOverflow PowerPoint VBA](https://stackoverflow.com/questions/tagged/powerpoint-vba) – For questions and community support related to PowerPoint VBA.
 
