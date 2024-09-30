@@ -55,7 +55,7 @@ Below are some key features, though not all are listed.
 
 A step-by-step guide to installing **ProDeck** in PowerPoint:
 
-#### For Windows:
+#### For Windows
 
 1. **Prerequisite**: Ensure any previous versions of ProDeck are uninstalled to avoid conflicts.
 2. **Download ProDeck**: Download the latest [release of ProDeck](https://github.com/rodrigolourencofarinha/ProDeck/releases) (i.e., `.ppam` file).
@@ -70,7 +70,7 @@ A step-by-step guide to installing **ProDeck** in PowerPoint:
 6. **Complete Installation**:
    - The ProDeck tab should now appear in the PowerPoint ribbon, confirming successful installation.
 
-#### For Mac:
+#### For Mac
 
 1. **Download ProDeck**: Download the `.ppam` file to a preferred folder (e.g., Downloads).
 2. **Open PowerPoint**: Launch PowerPoint on your Mac.
@@ -104,15 +104,15 @@ You are welcome to submit issues and bug reports via this GitHub repository. I w
 
 You have three alternatives based on your skill level:
 
-### For Beginners:
+### For Beginners
    1. **Build from the `.pptm` file**: 
      - I suggest this approach if you are just starting out and want to use or customize the existing code without diving too deeply into VBA or advanced development.
 
-### For Advanced Users:
+### For Advanced Users
    2.  **Fork this repo**: If you are familiar with Git and want to customize the project, you can fork this repository.
    3. **Build your own `.pptm` file**:You can start from scratch or use this repo as a base and develop your own `.pptm` (PowerPoint Macro-Enabled Presentation) file, adding or modifying the macros to suit your needs.
 
-## How to Edit the Code:
+## How to Edit the Code
 To edit the macros and custom functionality within the `.pptm` file, follow these steps:
 
 1. **Enable the Developer Tab in the Ribbon**: If you don't already have the Developer tab visible, activate it by following [this guide](https://support.microsoft.com/en-us/office/show-the-developer-tab-in-word-e356706f-1891-4bb8-8d72-f57a51146792).
@@ -129,7 +129,7 @@ To edit the macros and custom functionality within the `.pptm` file, follow thes
     
 4. **Edit the Ribbon:** Download the [Office RibbonX Editor](https://github.com/fernandreu/office-ribbonx-editor) to edit the ribbon
 
-### Additional Resources:
+### Additional Resources
 - [VBA Documentation](https://docs.microsoft.com/en-us/office/vba/api/overview/powerpoint) – Microsoft's official documentation for PowerPoint VBA.
 - [StackOverflow PowerPoint VBA](https://stackoverflow.com/questions/tagged/powerpoint-vba) – For questions and community support related to PowerPoint VBA.
 
