@@ -101,3 +101,6 @@ To edit the macros and custom functionality within the `.pptm` file, follow thes
 #### Additional Resources:
 - [VBA Documentation](https://docs.microsoft.com/en-us/office/vba/api/overview/powerpoint) – Microsoft's official documentation for PowerPoint VBA.
 - [StackOverflow PowerPoint VBA](https://stackoverflow.com/questions/tagged/powerpoint-vba) – For questions and community support related to PowerPoint VBA.
+
+## Other Amazing Open Source Tools
+- [Instrumenta](https://github.com/iappyx/Instrumenta): A couple of functions in ProDeck were ported from Instrumenta
