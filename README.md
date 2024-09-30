@@ -104,3 +104,5 @@ To edit the macros and custom functionality within the `.pptm` file, follow thes
 
 ## Other Amazing Open Source Tools
 - [Instrumenta](https://github.com/iappyx/Instrumenta): A couple of functions in ProDeck were ported from Instrumenta
+- [ColorPicker](https://github.com/ericaddison/VBA-PPT-ColorPicker): A highly useful tool that allows for changing all colors in the deck efficiently, implemented in ProDeck to streamline color customization.
+- [Office Fluent UI Identifiers](https://github.com/OfficeDev/office-fluent-ui-command-identifiers): A great resource for finding identifiers to make the add-in look seamless.
