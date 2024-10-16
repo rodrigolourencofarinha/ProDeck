@@ -286,7 +286,7 @@
                     <control idMso="ObjectRotateRight90" showLabel="false"  keytip="GOR"/>
                     <control idMso="ObjectFlipHorizontal" showLabel="false" keytip="FH"/>             
                     <control idMso="ObjectFlipVertical" showLabel="false" keytip="FV"/>
-                    <separator id="SeoaratorGroupBring" />    
+                    <separator id="SeparatorGroupMove" />    
                     <control idMso="ObjectsGroup" showLabel="false" keytip="GP" />
                     <control idMso="ObjectBringForward" showLabel="false" keytip="GF"/>
                     <control idMso="ObjectBringToFront" showLabel="false" keytip="GR"/>
@@ -300,7 +300,11 @@
                     <button id="Show_All_Objects" label="Show All Objects on Selected Slides" image="ShowAllObjects" onAction="Show_All_Objects" showLabel="false" keytip="OSA"
                     screentip="Show All Objects on Selected Slides" supertip="Show all hidden objects on the selected slides.&#13;&#13;This function shows all objects hidden through the 'Hide Selected Objects' function or the 'Selection Pane'."
                     getEnabled="EnabledBtInfo"/> 
-                    <control idMso="SelectionPane" showLabel="false" />                                                   
+                    <control idMso="SelectionPane" showLabel="false" />
+                    <separator id="SeparatorAnimation" />
+                    <control idMso="AnimationGallery" showLabel="false" />
+                    <control idMso="AnimationPainter" showLabel="false" />
+                    <control idMso="AnimationCustom" showLabel="false" />                                                   
                 </group >       
                 <group id="GroupMerge" label="Merge" imageMso="CombineShapesGallery"> 
                     <button id="Merge_Text_Boxes" label="Merge Text" getImage="RibbonObjectGetImage" onAction="Merge_Text_Boxes" showLabel="true" keytip="MTB"
@@ -318,8 +322,10 @@
                     screentip="Change Proofing Language" supertip="Change language on all slides alternating between Portuguese (Brazil), English (US), and Spanish."
                     getEnabled="EnabledBtInfo">
                         <button id="Language_US" label="English (US)" image="LanguageUS" showLabel="true" onAction="Language_US"/>
-                        <button id="Language_BR" label="Portuguese (Brazil)" image="LanguageBR" showLabel="true" onAction="Language_BR"/>
-                        <button id="Language_ES" label="Spanish (Spain)" showLabel="true"  image="LanguageES" onAction="Language_ES"/>
+                        <button id="Language_BR" label="Portuguese (BR)" image="LanguageBR" showLabel="true" onAction="Language_BR"/>
+                        <button id="Language_ES" label="Spanish (ES)" showLabel="true"  image="LanguageES" onAction="Language_ES"/>
+                        <button id="Language_FR" label="French (FR)" image="LanguageFR" showLabel="true" onAction="Language_FR"/>
+                        <button id="Language_DE" label="German (DE)" showLabel="true"  image="LanguageDE" onAction="Language_DE"/>                       
                         <control idMso="SetLanguage" showLabel="true" /> 
                     </menu>
                 </group >                        
