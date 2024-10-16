@@ -137,7 +137,6 @@ On Error Resume Next
     
 End Sub
 Sub Language_BR()
-
     ChangeSpellCheckLanguage (msoLanguageIDBrazilianPortuguese)
 End Sub
 Sub Language_US()
@@ -145,4 +144,10 @@ Sub Language_US()
 End Sub
 Sub Language_ES()
     ChangeSpellCheckLanguage (msoLanguageIDSpanish)
+End Sub
+Sub Language_FR()
+    ChangeSpellCheckLanguage (msoLanguageIDFrench)
+End Sub
+Sub Language_DE()
+    ChangeSpellCheckLanguage (msoLanguageIDGerman)
 End Sub
