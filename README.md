@@ -6,7 +6,7 @@ ProDeck is a PowerPoint add-in designed to help those who work extensively with 
 
 To install on Windows or Mac:
 - Download the `.ppam` in the [releases page](https://github.com/rodrigolourencofarinha/ProDeck/releases)
-- **Important!** Read [installation instructions](https://github.com/rodrigolourencofarinha/ProDeck/releases) 
+- **Important!** Follow the [installation instructions](https://github.com/rodrigolourencofarinha/ProDeck?tab=readme-ov-file#installing--uninstalling)
 
 ## Why I Created This
 
