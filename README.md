@@ -4,6 +4,10 @@ ProDeck is a PowerPoint add-in designed to help those who work extensively with 
 
 ![ProDeck Toolbar](assets/ProDeck_v1.5.0_Toolbar.png)
 
+To install on Windows or Mac:
+- Download the `.ppam` in the [releases page](https://github.com/rodrigolourencofarinha/ProDeck/releases)
+- **Important!** Read [installation instructions](https://github.com/rodrigolourencofarinha/ProDeck/releases) 
+
 ## Why I Created This
 
 As a project manager at a strategy consulting firm, I quickly learned that a well-designed toolbar can save hours of work. I tested several commercial options like [Power-User](https://www.powerusersoftwares.com/) and [BrightSlide](https://www.brightcarbon.com/brightslide/), but found they either didn’t offer the exact features I needed or were overloaded with unnecessary tools. I also tried other free and open-source alternatives, but they were often too rough and riddled with bugs.
