@@ -63,11 +63,9 @@
                 </group > 
                 <group id="GroupFontPragraph" label="Font and Paragraph" imageMso="ChangeCaseGallery">
                     <box id="BoxFont" boxStyle="horizontal">
-                        <comboBox idMso="Font" sizeString="WWWWWW"/>
+                        <comboBox idMso="Font" sizeString="WWWW"/>
                         <control idMso="FontSize" showLabel="false"/>
-                        <control idMso="FontSizeIncrease" showLabel="false"/>
-                        <control idMso="FontSizeDecrease" showLabel="false"/>
-                        <control idMso="ChangeCaseGallery" showLabel="false"/>            
+                        <control idMso="ChangeCaseGallery" showLabel="false"/>    
                     </box>
                     <box id="BoxText" boxStyle="horizontal">
                         <control idMso="Bold" showLabel="false"/>
@@ -75,16 +73,24 @@
                         <control idMso="Underline" showLabel="false"/>
                         <control idMso="Strikethrough" showLabel="false"/>
                         <control idMso="CharacterSpacingGallery" showLabel="false"/>
-                        <control idMso="TableColumnsGallery" showLabel="false"/>
-                        <control idMso="PowerPointParagraphDialog" showLabel="false" keytip="PG"/>  
                     </box>
                     <box id="BoxAlignText" boxStyle="horizontal">
                         <control idMso="AlignLeft" showLabel="false"/>
                         <control idMso="AlignCenter" showLabel="false"/>
                         <control idMso="AlignRight" showLabel="false"/>
-                        <control idMso="AlignJustify" showLabel="false"/>
+                        <control idMso="Superscript" showLabel="false"/>
+                        <control idMso="Subscript" showLabel="false"/>   
+                    </box>
+                    <separator id="BulletPoints" />
+                    <box id="BulletPointsOne" boxStyle="horizontal">  
                         <control idMso="BulletsGallery" showLabel="false" keytip="BG"/>
+                        <control idMso="IndentDecrease" showLabel="false"/>  
+                    </box>
+                    <box id="BulletPointsTwo" boxStyle="horizontal">    
                         <control idMso="NumberingGallery" showLabel="false" keytip="NG"/>
+                        <control idMso="IndentIncrease" showLabel="false"/>   
+                    </box>
+                    <box id="BulletPointsThree" boxStyle="horizontal"> 
                         <menu id="AdditionalBullets" label="Additional Bullets" imageMso="MultilevelListGallery" showLabel="false"   keytip="TC"             
                         screentip="Ticks and Crosses" supertip="Set multilevel lists easily or set ticks and crosses as bullet points."
                         getEnabled="EnabledBtInfo">
@@ -102,7 +108,8 @@
                             <button id="BulletsTicks" label="Ticks" showLabel="false" imageMso="AcceptTask" onAction="TextBulletsTicks" />
                             <button id="BulletsDashes" label="Dash" showLabel="false" imageMso="OutlineCollapse" onAction="TextBulletsDashes" /> 
                             <button id="BulletsCrosses" label="Crosses" showLabel="false" imageMso="DeclineInvitation" onAction="TextBulletsCrosses" />  
-                        </menu>    
+                        </menu>   
+                        <control idMso="PowerPointParagraphDialog" showLabel="false" keytip="PG"/>   
                     </box>
                     <separator id="SeparatorTextFrame" />     
                     <control idMso="TextDirectionGallery" showLabel="false" />
@@ -306,19 +313,17 @@
                     <control idMso="AnimationPainter" showLabel="false" />
                     <control idMso="AnimationCustom" showLabel="false" />                                                   
                 </group >       
-                <group id="GroupMerge" label="Merge" imageMso="CombineShapesGallery"> 
-                    <button id="Merge_Text_Boxes" label="Merge Text" getImage="RibbonObjectGetImage" onAction="Merge_Text_Boxes" showLabel="true" keytip="MTB"
+                <group id="ShapeText" label="Shape and Text" imageMso="CharacterShading"> 
+                    <button id="Merge_Text_Boxes" label="Merge Text" getImage="RibbonObjectGetImage" onAction="Merge_Text_Boxes" showLabel="false" keytip="MTB"
                     screentip="Merge Text" supertip="Merge text within selected objects into a single object. Text will be merged into the first shape you selected. Original text formatting is retained."
                     getEnabled="EnabledBtInfo"/>
-                    <button id="Split_Text_Boxes" label="Split Text" getImage="RibbonObjectGetImage" onAction="Split_Text_Boxes" showLabel="true" keytip="STB"
+                    <button id="Split_Text_Boxes" label="Split Text" getImage="RibbonObjectGetImage" onAction="Split_Text_Boxes" showLabel="false" keytip="STB"
                     screentip="Split Text" supertip="Split text between multiple objects by paragraph. Keeps the original text and object formatting.&#13;&#13;Bulleted and numbered list items are considered paragraphs."
                     getEnabled="EnabledBtInfo"/>
-                    <control idMso="CombineShapesGallery" showLabel="true" keytip="MS" />
-                </group > 
-                <group id="GroupText" label="Text" imageMso="SetLanguage"> 
-                    <control idMso="FontsReplaceFonts" label="Replace Fonts" keytip="RF"/>
-                    <control idMso="Translator" label="Translate" keytip="TRT" />
-                    <menu id="Language" image="LanguageUS" label="Language" keytip="PRL" 
+                    <control idMso="CombineShapesGallery" showLabel="false" keytip="MS" />
+                    <control idMso="FontsReplaceFonts" label="Replace Fonts" showLabel="false" keytip="RF"/>
+                    <control idMso="Translator" label="Translate" showLabel="false" keytip="TRT" />
+                    <menu id="Language" image="LanguageUS" label="Language" showLabel="false" keytip="PRL" 
                     screentip="Change Proofing Language" supertip="Change language on all slides alternating between Portuguese (Brazil), English (US), and Spanish."
                     getEnabled="EnabledBtInfo">
                         <button id="Language_US" label="English (US)" image="LanguageUS" showLabel="true" onAction="Language_US"/>
@@ -330,7 +335,7 @@
                     </menu>
                 </group >                        
                 <group id="GroupClean" label="Finish Up" imageMso="QueryBuilder"> 
-                    <menu  id="CleanDeck" label="Clean Deck" imageMso="ReviewDeleteMarkup" keytip="CLN"
+                    <menu  id="CleanDeck" label="Clean Deck" showLabel="true" imageMso="ReviewDeleteMarkup" keytip="CLN"
                     screentip="Clean Deck" supertip="Delete confidential information and optimize file size by compressing pictures and deleting unwanted layouts, shapes, comments, notes, animations, and transitions."
                     getEnabled="EnabledBtInfo">
                         <menuSeparator id="CleanText" title="Line Breaks and Double Spaces"/>
@@ -371,7 +376,7 @@
                         <control idMso="AdvancedFileProperties" label="Edit Document Properties"/>
                         <button id="anonymize" label="Anonymize Selected Slides with Lorem Ipsum" imageMso="Clear" onAction="AnonymizeWithLoremIpsum" />  
                     </menu>
-                    <menu id="StampsMenu" label="Label Slides" imageMso="NameDefine"  showLabel="true" keytip="LBL"
+                    <menu id="StampsMenu" label="Labels" showLabel="true" imageMso="NameDefine" keytip="LBL"
                     screentip="Stamp Slides" supertip="Create labels to indicate status or clarify content and slides."
                     getEnabled="EnabledBtInfo"> 
                         <menuSeparator id="StampSMenuSeparator" title="Label Selected Slide"/>
@@ -389,7 +394,7 @@
                         <button id="StampC_Not_Exhaustive" label="NOT EXHAUSTIVE" showLabel="true" imageMso="InsertHR"  onAction="StampC_Not_Exhaustive"/>
                         <button id="StampC_Discussion" label="FOR DISCUSSION" showLabel="true" imageMso="InsertHR"  onAction="StampC_Discussion"/>
                     </menu>                    
-                    <menu id="ClassifyMenu" label="Classify Document" getImage="RibbonObjectGetImage" showLabel="true" keytip="CD"
+                    <menu id="ClassifyMenu" label="Classify Content" showLabel="true" getImage="RibbonObjectGetImage" keytip="CD"
                     screentip="Classify Document" supertip="Classify document in terms of work progress or access restriction."> 
                         <menuSeparator id="ClassifyMenuSeparator" title="Classify Document"/>
                         <button id="StampD_Draft" label="DRAFT MATERIAL" showLabel="true" imageMso="StampTool" onAction="StampD_Draft"/>
@@ -404,9 +409,7 @@
                         <button id="Watermark_Add" label="Insert Watermark" imageMso="WatermarkCustomDialog" onAction="Watermark_Add" />
                         <button id="Watermark_Delete" label="Remove Watermark" imageMso="Delete" onAction="Watermark_Delete" />
                     </menu>
-                </group >           
-                <group id="GroupAbout" label="About" imageMso="ResultsPaneAccessibilityMoreInfo" > 
-                    <button id="About" label="About Strator" showLabel="false" getImage="RibbonObjectGetImage" onAction="About" keytip="PDK"/>
+                    <button id="About" label="About ProDeck" showLabel="false" getImage="RibbonObjectGetImage" onAction="About" keytip="PDK"/>
                     <button id="ActivateStratorTab" label="Go To Strator Tab" imageMso="OfficeExtensionsFeaturedApp1" onAction="ActivateStratorTab" visible="false" />
                     <button id="Grid_Shapes" label="Create Grid of Shapes" onAction="Grid_Shapes" imageMso="TableSelectVisibleCells" showLabel="false" visible="false"
                     screentip="Create Grid of Shape" supertip="Split the selected object into evenly sized copies of itself.&#13;&#13;Inform the number of columns and rows in which the object will be divided."
