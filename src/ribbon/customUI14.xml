@@ -201,6 +201,9 @@
                         </splitButton>
                         <button id="TableRowIncreaseGaps" label="Increase row gaps" showLabel="false" imageMso="UpArrow2" onAction="TableRowIncreaseGaps" />
                         <button id="TableRowDecreaseGaps" label="Decrease row gaps" showLabel="false" imageMso="DownArrow2" onAction="TableRowDecreaseGaps" />
+                        <menuSeparator id="DistributeRowsColumns" title="Distribute Rows and columns" />
+                            <control idMso="TableColumnsDistribute" showLabel="false"/>     
+                            <control idMso="TableRowsDistribute" showLabel="false"/> 
                     </menu>
                     <button id="CloneSelectionRight" label="Clone Selection to Right" imageMso="ObjectNudgeRight" onAction="ObjectsCloneRight" showLabel="false" keytip="CSR"
                     getEnabled="EnabledBtInfo"/>
