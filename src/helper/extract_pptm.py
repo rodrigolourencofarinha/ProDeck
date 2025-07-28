@@ -84,16 +84,21 @@ def extract_pptm_vba(pptm_path, output_folder):
     modules_folder = output_folder / "modules"
     forms_folder = output_folder / "forms"
     classes_folder = output_folder / "classes"
-    ribbon_folder = output_folder 
     
-    # Clean existing folders safely
-    for folder in [modules_folder, forms_folder, classes_folder, ribbon_folder]:
+    # Clean structured folders safely
+    for folder in [modules_folder, forms_folder, classes_folder]:
         if folder.exists():
             safe_remove(folder)
         folder.mkdir(parents=True)
-    
-    print(f"📁 Created output structure in: {output_folder}")
-    
+
+    # Clean top-level ribbon folders
+    for ribbon_name in ["customUI", "customUI14"]:
+        ribbon_path = output_folder / ribbon_name
+        if ribbon_path.exists():
+            print(f"🧹 Removing old ribbon folder: {ribbon_name}")
+            safe_remove(ribbon_path)
+        print(f"📁 Created output structure in: {output_folder}")
+        
     # Step 1: Copy PPTM and save as ZIP
     temp_dir = Path(tempfile.mkdtemp())
     zip_path = temp_dir / f"{pptm_path.stem}.zip"
@@ -117,10 +122,11 @@ def extract_pptm_vba(pptm_path, output_folder):
         
         # Check for both customUI and customUI14
         ribbon_found = False
-        for ui_path, ui_name in [(custom_ui_path, "customUI"), (custom_ui14_path, "customUI14")]:
+        for ui_path in [custom_ui14_path, custom_ui_path]:
             if ui_path.exists():
-                print(f"  ✓ Found {ui_name} folder")
-                shutil.copytree(ui_path, ribbon_folder / ui_name, dirs_exist_ok=True)
+                print(f"  ✓ Found ribbon UI: {ui_path.name}")
+                dest_path = output_folder / ui_path.name  # direct to output folder
+                shutil.copytree(ui_path, dest_path, dirs_exist_ok=True)
                 ribbon_found = True
         
         if not ribbon_found:
@@ -255,7 +261,9 @@ def extract_pptm_vba(pptm_path, output_folder):
     print(f"🔧 Modules (.bas): {count_files(modules_folder)} files")
     print(f"📝 Classes (.cls): {count_files(classes_folder)} files")
     print(f"🖼 Forms (.frm): {count_files(forms_folder)} files")
-    print(f"🎀 Ribbon files: {count_files(ribbon_folder)} files")
+    ribbon_ui_paths = [output_folder / "customUI", output_folder / "customUI14"]
+    ribbon_count = sum(count_files(path) for path in ribbon_ui_paths if path.exists())
+    print(f"🎀 Ribbon files: {ribbon_count} files")
     print("\n✅ Extraction completed successfully!")
 
 def main():
