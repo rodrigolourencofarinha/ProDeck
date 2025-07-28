@@ -39,7 +39,7 @@ For Each sld In ActiveWindow.Selection.SlideRange
         .ParagraphFormat.Alignment = ppAlignCenter
         With .Font
             .size = 14
-            .Name = "Calibri"
+            .Name = "Arial"
             .color.RGB = RGB(255, 255, 255)
         End With
     stmp.Name = "PRODECK SLIDE LABEL"

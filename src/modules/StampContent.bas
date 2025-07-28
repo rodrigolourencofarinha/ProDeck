@@ -47,7 +47,7 @@ With stmp.TextFrame.TextRange
     .ParagraphFormat.Alignment = ppAlignCenter
     With .Font
         .size = 14
-        .Name = "Calibri"
+        .Name = "Arial"
         .color.RGB = RGB(0, 0, 0)
     End With
 End With

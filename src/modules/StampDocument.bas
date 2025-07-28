@@ -65,7 +65,7 @@ For Each slide In ActiveWindow.Presentation.Slides
         .ParagraphFormat.Alignment = ppAlignRight
         With .Font
             .size = 16
-            .Name = "Calibri"
+            .Name = "Arial"
             .color.RGB = RGB(255, 0, 0)
         End With
     stmp.Left = ttlRight - stmp.Width

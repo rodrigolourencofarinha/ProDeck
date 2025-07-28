@@ -61,7 +61,7 @@ With StickyNote
             '.text = "Note: "
             With .Font
                 .size = 11
-                .Name = "Calibri"
+                .Name = "Arial"
                 .Bold = msoFalse
                 .Fill.ForeColor.RGB = RGB(0, 0, 0)
             End With

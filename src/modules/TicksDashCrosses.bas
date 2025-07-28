@@ -54,7 +54,7 @@ Else
     With ActiveWindow.Selection.TextRange.ParagraphFormat.Bullet
         .Character = 215
         .Visible = True
-        .Font.Name = "Calibri"
+        .Font.Name = "Arial"
         .Font.color = RGB(255, 0, 0)
     End With
 End If
@@ -84,7 +84,7 @@ Else
     With ActiveWindow.Selection.TextRange.ParagraphFormat.Bullet
         .Character = 8722
         .Visible = True
-        .Font.Name = "Calibri"
+        .Font.Name = "Arial"
         .Font.color = RGB(59, 154, 220)
     End With
 End If
