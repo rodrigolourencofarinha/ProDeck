@@ -216,7 +216,7 @@ def extract_pptm_vba(pptm_path, output_folder):
                         # Add header comment
                         header = f"' Extracted from: {vba_filename}\n' Source: {pptm_path.name}\n\n"
                         
-                        with open(output_file, 'w', encoding='utf-8', errors='ignore') as f:
+                        with open(output_file, 'w', encoding='utf-8', newline='\n', errors='ignore') as f:
                             f.write(header + vba_code)
                         
                         print(f"      ✓ Saved: {output_file.name}")

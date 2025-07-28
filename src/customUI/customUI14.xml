@@ -63,7 +63,7 @@
                 </group > 
                 <group id="GroupFontPragraph" label="Font and Paragraph" imageMso="ChangeCaseGallery">
                     <box id="BoxFont" boxStyle="horizontal">
-                        <comboBox idMso="Font" sizeString="WWWW"/>
+                        <comboBox idMso="Font" showLabel="false" sizeString="WWWW"/>
                         <control idMso="FontSize" showLabel="false"/>
                         <control idMso="ChangeCaseGallery" showLabel="false"/>    
                     </box>

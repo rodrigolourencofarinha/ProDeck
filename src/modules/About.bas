@@ -1,7 +1,7 @@
 ' Extracted from: About.bas
-' Source: ProDeck_v1_6_2.pptm
+' Source: ProDeck_v1_6_3.pptm
 
-Attribute VB_Name = "About"
-Sub About()
-MsgBox ("ProDeck V1.6.2 2025-02-04" & vbNewLine & vbNewLine & "This add-in was created by Rodrigo Lourenço Farinha" & vbNewLine & vbNewLine & "Feedback/Suggestions: rodrigolourencofarinha@gmail.com" & vbNewLine & vbNewLine & "© 2025 Rodrigo Lourenço Farinha. All rights reserved.")
-End Sub
+Attribute VB_Name = "About"
+Sub About()
+MsgBox ("ProDeck V1.5.2 2024-10-21" & vbNewLine & vbNewLine & "This add-in was created by Rodrigo Lourenço Farinha" & vbNewLine & vbNewLine & "Feedback/Suggestions: rodrigolourencofarinha@gmail.com" & vbNewLine & vbNewLine & "© 2024 Rodrigo Lourenço Farinha. All rights reserved.")
+End Sub
