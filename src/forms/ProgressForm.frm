@@ -2,7 +2,7 @@
 ' Source: ProDeck_v1_6_3.pptm
 
 Attribute VB_Name = "ProgressForm"
-Attribute VB_Base = "0{E8CF09EF-CB1B-4690-A297-A99282340B24}{5EF60241-5776-471B-A7F5-20889D0B57F4}"
+Attribute VB_Base = "0{841B155E-7543-40DC-8E44-CBA2F9E2C044}{AD0E74DC-1457-4E2B-B656-A82583CC64C2}"
 Attribute VB_GlobalNameSpace = False
 Attribute VB_Creatable = False
 Attribute VB_PredeclaredId = True

@@ -2,7 +2,7 @@
 ' Source: ProDeck_v1_6_3.pptm
 
 Attribute VB_Name = "ColorPickerForm"
-Attribute VB_Base = "0{3DE34784-4469-4312-AFD6-ACD88B29941D}{E3B1AB9D-AA3F-4C13-83ED-920BF1485F31}"
+Attribute VB_Base = "0{EC2D3F2D-A67C-478F-A037-C4E2F3A7B48A}{962DF02D-5DF5-4548-9CB0-CE30EFFD7615}"
 Attribute VB_GlobalNameSpace = False
 Attribute VB_Creatable = False
 Attribute VB_PredeclaredId = True
