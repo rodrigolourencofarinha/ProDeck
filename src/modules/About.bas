@@ -1,4 +1,7 @@
-Attribute VB_Name = "About"
-Sub About()
-MsgBox ("ProDeck V1.6.2 2025-02-04" & vbNewLine & vbNewLine & "This add-in was created by Rodrigo Lourenço Farinha" & vbNewLine & vbNewLine & "Feedback/Suggestions: rodrigolourencofarinha@gmail.com" & vbNewLine & vbNewLine & "© 2025 Rodrigo Lourenço Farinha. All rights reserved.")
-End Sub
+' Extracted from: About.bas
+' Source: ProDeck_v1_6_2.pptm
+
+Attribute VB_Name = "About"
+Sub About()
+MsgBox ("ProDeck V1.6.2 2025-02-04" & vbNewLine & vbNewLine & "This add-in was created by Rodrigo LourenÃ§o Farinha" & vbNewLine & vbNewLine & "Feedback/Suggestions: rodrigolourencofarinha@gmail.com" & vbNewLine & vbNewLine & "Â© 2025 Rodrigo LourenÃ§o Farinha. All rights reserved.")
+End Sub
