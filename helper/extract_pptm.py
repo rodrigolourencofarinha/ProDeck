@@ -282,7 +282,7 @@ def main():
 
     script_dir   = Path(__file__).resolve().parent
     project_root = script_dir.parent
-    output_dir  = project_root 
+    output_dir  = project_root / "src"
 
     # Example usage - modify these paths
     pptm_file = r"C:\path\to\your\presentation.pptm"  # Change this path
