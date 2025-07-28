@@ -63,21 +63,24 @@
                 </group > 
                 <group id="GroupFontPragraph" label="Font and Paragraph" imageMso="ChangeCaseGallery">
                     <box id="BoxFont" boxStyle="horizontal">
-                        <comboBox idMso="Font" showLabel="false" sizeString="WWWW"/>
+                        <comboBox idMso="Font" showLabel="false" sizeString="WWWWW"/>
                         <control idMso="FontSize" showLabel="false"/>
-                        <control idMso="ChangeCaseGallery" showLabel="false"/>    
+                        <control idMso="FontSizeIncrease" showLabel="false"/>
+                        <control idMso="FontSizeDecrease" showLabel="false"/>  
                     </box>
                     <box id="BoxText" boxStyle="horizontal">
                         <control idMso="Bold" showLabel="false"/>
                         <control idMso="Italic" showLabel="false"/>
                         <control idMso="Underline" showLabel="false"/>
                         <control idMso="Strikethrough" showLabel="false"/>
+                        <control idMso="ChangeCaseGallery" showLabel="false"/>  
                         <control idMso="CharacterSpacingGallery" showLabel="false"/>
                     </box>
                     <box id="BoxAlignText" boxStyle="horizontal">
                         <control idMso="AlignLeft" showLabel="false"/>
                         <control idMso="AlignCenter" showLabel="false"/>
                         <control idMso="AlignRight" showLabel="false"/>
+                        <control idMso="TableColumnsGallery" showLabel="false"/>
                         <control idMso="Superscript" showLabel="false"/>
                         <control idMso="Subscript" showLabel="false"/>   
                     </box>
@@ -310,11 +313,7 @@
                     <button id="Show_All_Objects" label="Show All Objects on Selected Slides" image="ShowAllObjects" onAction="Show_All_Objects" showLabel="false" keytip="OSA"
                     screentip="Show All Objects on Selected Slides" supertip="Show all hidden objects on the selected slides.&#13;&#13;This function shows all objects hidden through the 'Hide Selected Objects' function or the 'Selection Pane'."
                     getEnabled="EnabledBtInfo"/> 
-                    <control idMso="SelectionPane" showLabel="false" />
-                    <separator id="SeparatorAnimation" />
-                    <control idMso="AnimationGallery" showLabel="false" />
-                    <control idMso="AnimationPainter" showLabel="false" />
-                    <control idMso="AnimationCustom" showLabel="false" />                                                   
+                    <control idMso="SelectionPane" showLabel="false" />                                               
                 </group >       
                 <group id="ShapeText" label="Shape and Text" imageMso="CharacterShading"> 
                     <button id="Merge_Text_Boxes" label="Merge Text" getImage="RibbonObjectGetImage" onAction="Merge_Text_Boxes" showLabel="false" keytip="MTB"
