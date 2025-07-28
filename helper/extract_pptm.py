@@ -214,10 +214,10 @@ def extract_pptm_vba(pptm_path, output_folder):
                         output_file = dest_folder / f"{name_without_ext}{file_ext}"
                         
                         # Add header comment
-                        header = f"' Extracted from: {vba_filename}\n' Source: {pptm_path.name}\n\n"
+                        # header = f"' Extracted from: {vba_filename}\n' Source: {pptm_path.name}\n\n"
                         
                         with open(output_file, 'w', encoding='utf-8', newline='\n', errors='ignore') as f:
-                            f.write(header + vba_code)
+                            f.write(vba_code)
                         
                         print(f"      ✓ Saved: {output_file.name}")
             else:
