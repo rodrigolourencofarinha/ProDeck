@@ -1,6 +1,3 @@
-' Extracted from: DeleteEmptyShapes.bas
-' Source: ProDeck_v1_6_3.pptm
-
 Attribute VB_Name = "DeleteEmptyShapes"
 Option Explicit
 Sub Delete_Empty_Shapes()

@@ -1,6 +1,3 @@
-' Extracted from: EventClassModule.cls
-' Source: ProDeck_v1_6_3.pptm
-
 Attribute VB_Name = "EventClassModule"
 Attribute VB_Base = "0{FCFB3D2A-A0FA-1068-A738-08002B3371B5}"
 Attribute VB_GlobalNameSpace = False
@@ -27,7 +24,7 @@ Private Sub App_WindowSelectionChange(ByVal Sel As Selection)
             Exit Sub
         Else
             On Error Resume Next
-            MyRibbon.ActivateTab ("Strator")
+            MyRibbon.ActivateTab ("ProDeck")
         End If
     Else
         If ActiveWindow.Selection.Type = ppSelectionSlides Then
@@ -35,7 +32,7 @@ Private Sub App_WindowSelectionChange(ByVal Sel As Selection)
         Else
             If ActiveWindow.Selection.Type = ppSelectionText Then
                 On Error Resume Next
-                MyRibbon.ActivateTab ("Strator")
+                MyRibbon.ActivateTab ("ProDeck")
             Else
                 Exit Sub
             End If

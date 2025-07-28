@@ -1,6 +1,3 @@
-' Extracted from: SelectObjects.bas
-' Source: ProDeck_v1_6_3.pptm
-
 Attribute VB_Name = "SelectObjects"
 Sub Select_Similar_Fill_Color()
 

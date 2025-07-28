@@ -1,6 +1,3 @@
-' Extracted from: ModuleEventHandler.bas
-' Source: ProDeck_v1_6_3.pptm
-
 Attribute VB_Name = "ModuleEventHandler"
 Option Explicit
 Public cPPTObject As New cEventClass

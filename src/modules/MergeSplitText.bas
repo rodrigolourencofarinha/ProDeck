@@ -1,6 +1,3 @@
-' Extracted from: MergeSplitText.bas
-' Source: ProDeck_v1_6_3.pptm
-
 Attribute VB_Name = "MergeSplitText"
 Sub Merge_Text_Boxes()
 Dim oFirstShape As Shape

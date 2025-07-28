@@ -1,6 +1,3 @@
-' Extracted from: ZTest.bas
-' Source: ProDeck_v1_6_3.pptm
-
 Attribute VB_Name = "ZTest"
 Sub AAAPrint()
 Dim shp As Shape

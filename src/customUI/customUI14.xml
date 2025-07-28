@@ -1,7 +1,7 @@
 <customUI xmlns="http://schemas.microsoft.com/office/2009/07/customui" onLoad="LockAspectRatio.OnLoad"> 
     <ribbon> 
         <tabs> 
-            <tab id="Strator" label="ProDeck" keytip="X">               
+            <tab id="ProDeck" label="ProDeck" keytip="X">               
                 <group id="GroupInsert" label="Insert" imageMso="SlideNewGallery"> 
                     <control idMso="SlideNewGallery" showLabel="false" keytip="SI"/>
                     <gallery idMso="ShapesInsertGallery" showLabel="false" />
@@ -10,7 +10,7 @@
                     <control idMso="FlyoutAnchorInsertPictures" showLabel="false" keytip="IP"/>
                     <control idMso="IconInsertFromFile" showLabel="false" keytip="NS"/>
                     <menu  id="BatchTool" label="Batch Add or Delete" imageMso="RecurringTaskInsert" showLabel="false" keytip="AUD"
-                    screentip="Batch Add or Delete" supertip="Add/Delete objects from all slides.&#13;&#13;Tip: When you use the 'Paste Object to Selected Slides' function, Strator will assign a unique name to the objects on all slides. With this unique name, you can update the position or remove all objects with the same name. You can also copy the name and assign it to other objects. This way, Strator will find this object and update position/delete as needed.">
+                    screentip="Batch Add or Delete" supertip="Add/Delete objects from all slides.&#13;&#13;Tip: When you use the 'Paste Object to Selected Slides' function, ProDeck will assign a unique name to the objects on all slides. With this unique name, you can update the position or remove all objects with the same name. You can also copy the name and assign it to other objects. This way, ProDeck will find this object and update position/delete as needed.">
                         <button id="Paste_Objects_All_Slides" label="Paste Objects to Selected Slides" onAction="Paste_Objects_All_Slides" imageMso="RecordsExpandAllSubdatasheets" showLabel="false"
                         screentip="Paste Objects to Selected Slides" supertip="Paste object in the clipboard to selected slides.&#13;&#13;The object can be removed later by clicking on the 'Delete Matching Objects from All Slides' button." 
                         getEnabled="EnabledBtInfo"/>
@@ -160,7 +160,7 @@
                         <button id="Select_Similar_Font_Color" label="Font Color" image="FontFillColor" onAction="Select_Similar_Font_Color"/>        
                     </menu>
                     <menu   id="Replace_Colors" label="Replace Colors"  imageMso="TextGlowColorPicker" showLabel="false" keytip="RPC"
-                    screentip="Replace Colors" supertip="Replace objects' colors from the selected slides.&#13;&#13;Choose a color to be replaced using the Strator color picker; then, choose the new color.&#13;&#13;Important: Strator finds and replaces colors with exact specified values. Check the correct values before using them. Some colors, although look exactly the same, may have different values.&#13;&#13;Tip: Select the shape you want to replace the color and click on 'More Colors...' to see the exact code of the color you want to replace."
+                    screentip="Replace Colors" supertip="Replace objects' colors from the selected slides.&#13;&#13;Choose a color to be replaced using the ProDeck color picker; then, choose the new color.&#13;&#13;Important: ProDeck finds and replaces colors with exact specified values. Check the correct values before using them. Some colors, although look exactly the same, may have different values.&#13;&#13;Tip: Select the shape you want to replace the color and click on 'More Colors...' to see the exact code of the color you want to replace."
                     getEnabled="EnabledBtInfo">
                         <menuSeparator id="SeparatorReplace" title="Replace from Selected Slides"/>
                         <button id="Replace_All_Colors" label="All Colors" imageMso="SchemeColorsGallery" onAction="Replace_All_Colors" />   
@@ -413,7 +413,7 @@
                         <button id="Watermark_Delete" label="Remove Watermark" imageMso="Delete" onAction="Watermark_Delete" />
                     </menu>
                     <button id="About" label="About ProDeck" showLabel="false" getImage="RibbonObjectGetImage" onAction="About" keytip="PDK"/>
-                    <button id="ActivateStratorTab" label="Go To Strator Tab" imageMso="OfficeExtensionsFeaturedApp1" onAction="ActivateStratorTab" visible="false" />
+                    <button id="ActivateProDeckTab" label="Go To ProDeck Tab" imageMso="OfficeExtensionsFeaturedApp1" onAction="ActivateProDeckTab" visible="false" />
                     <button id="Grid_Shapes" label="Create Grid of Shapes" onAction="Grid_Shapes" imageMso="TableSelectVisibleCells" showLabel="false" visible="false"
                     screentip="Create Grid of Shape" supertip="Split the selected object into evenly sized copies of itself.&#13;&#13;Inform the number of columns and rows in which the object will be divided."
                     getEnabled="EnabledBtInfo"/>   

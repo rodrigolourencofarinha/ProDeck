@@ -1,6 +1,3 @@
-' Extracted from: cEventClass.cls
-' Source: ProDeck_v1_6_3.pptm
-
 Attribute VB_Name = "cEventClass"
 Attribute VB_Base = "0{FCFB3D2A-A0FA-1068-A738-08002B3371B5}"
 Attribute VB_GlobalNameSpace = False

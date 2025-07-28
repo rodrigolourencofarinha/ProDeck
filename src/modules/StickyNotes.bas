@@ -1,6 +1,3 @@
-' Extracted from: StickyNotes.bas
-' Source: ProDeck_v1_6_3.pptm
-
 Attribute VB_Name = "StickyNotes"
 Sub GenerateStickyNote()
 Dim sldHeight As Single

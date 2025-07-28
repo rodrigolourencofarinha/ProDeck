@@ -1,8 +1,5 @@
-' Extracted from: ActivateTab.bas
-' Source: ProDeck_v1_6_3.pptm
-
 Attribute VB_Name = "ActivateTab"
-Sub ActivateStratorTab()
+Sub ActivateProDeckTab()
 On Error Resume Next
-MyRibbon.ActivateTab ("Strator")
+MyRibbon.ActivateTab ("ProDeck")
 End Sub

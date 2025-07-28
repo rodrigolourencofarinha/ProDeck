@@ -1,6 +1,3 @@
-' Extracted from: StackObjects.bas
-' Source: ProDeck_v1_6_3.pptm
-
 Attribute VB_Name = "StackObjects"
 
 Sub Stack_Top()

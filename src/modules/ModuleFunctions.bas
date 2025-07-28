@@ -1,6 +1,3 @@
-' Extracted from: ModuleFunctions.bas
-' Source: ProDeck_v1_6_3.pptm
-
 Attribute VB_Name = "ModuleFunctions"
 Private Declare PtrSafe Function WindowsColorDialog Lib "comdlg32.dll" Alias "ChooseColorA" (pcc As CHOOSECOLOR_TYPE) As LongPtr
     

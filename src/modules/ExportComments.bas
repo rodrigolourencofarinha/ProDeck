@@ -1,6 +1,3 @@
-' Extracted from: ExportComments.bas
-' Source: ProDeck_v1_6_3.pptm
-
 Attribute VB_Name = "ExportComments"
 Option Explicit
 Sub Export_Comments_Text()

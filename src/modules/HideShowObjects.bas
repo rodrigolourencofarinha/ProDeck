@@ -1,6 +1,3 @@
-' Extracted from: HideShowObjects.bas
-' Source: ProDeck_v1_6_3.pptm
-
 Attribute VB_Name = "HideShowObjects"
 Sub Hide_Objects()
 

@@ -1,6 +1,3 @@
-' Extracted from: TableDistributeWithGaps.bas
-' Source: ProDeck_v1_6_3.pptm
-
 Attribute VB_Name = "TableDistributeWithGaps"
 Sub TableColumnGapsEven()
     TableColumnGaps "even", 5

@@ -1,6 +1,3 @@
-' Extracted from: TicksDashCrosses.bas
-' Source: ProDeck_v1_6_3.pptm
-
 Attribute VB_Name = "TicksDashCrosses"
 Sub TextBulletsTicks()
 'START: Error message message box -----------------------------------------------

@@ -1,6 +1,3 @@
-' Extracted from: FootersSlideNumbers.bas
-' Source: ProDeck_v1_6_3.pptm
-
 Attribute VB_Name = "FootersSlideNumbers"
 Sub Fix_Footers()
 Dim sld As slide

@@ -1,6 +1,3 @@
-' Extracted from: WatermarkAddRemove.bas
-' Source: ProDeck_v1_6_3.pptm
-
 Attribute VB_Name = "WatermarkAddRemove"
 Sub Watermark_Add()
 On Error Resume Next

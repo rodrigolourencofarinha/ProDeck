@@ -1,6 +1,3 @@
-' Extracted from: ObjectsRoundedCorners.bas
-' Source: ProDeck_v1_6_3.pptm
-
 Attribute VB_Name = "ObjectsRoundedCorners"
 Sub ObjectsCopyRoundedCorner()
 Dim SlideShape  As PowerPoint.Shape

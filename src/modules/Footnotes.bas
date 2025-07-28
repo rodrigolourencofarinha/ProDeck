@@ -1,6 +1,3 @@
-' Extracted from: Footnotes.bas
-' Source: ProDeck_v1_6_3.pptm
-
 Attribute VB_Name = "Footnotes"
 Sub Notes()
 On Error Resume Next

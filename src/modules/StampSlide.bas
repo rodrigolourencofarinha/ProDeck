@@ -1,6 +1,3 @@
-' Extracted from: Stampslide.bas
-' Source: ProDeck_v1_6_3.pptm
-
 Attribute VB_Name = "Stampslide"
 Function StampS_Function(stamp As String, red As Long, green As Long, blue As Long)
 Dim sld As slide

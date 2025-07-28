@@ -1,6 +1,3 @@
-' Extracted from: SlideUtils.bas
-' Source: ProDeck_v1_6_3.pptm
-
 Attribute VB_Name = "SlideUtils"
 ' Various slide utilities that warrant their own function
 Option Explicit

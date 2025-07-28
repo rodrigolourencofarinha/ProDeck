@@ -1,6 +1,3 @@
-' Extracted from: ResizeShapes.bas
-' Source: ProDeck_v1_6_3.pptm
-
 Attribute VB_Name = "ResizeShapes"
 Sub Resize_Shapes()
 

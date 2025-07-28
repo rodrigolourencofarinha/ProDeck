@@ -1,6 +1,3 @@
-' Extracted from: StampContent.bas
-' Source: ProDeck_v1_6_3.pptm
-
 Attribute VB_Name = "StampContent"
 Function StampC_Function(stamp As String)
 Dim sld As slide

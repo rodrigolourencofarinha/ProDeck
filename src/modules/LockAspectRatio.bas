@@ -1,6 +1,3 @@
-' Extracted from: LockAspectRatio.bas
-' Source: ProDeck_v1_6_3.pptm
-
 Attribute VB_Name = "LockAspectRatio"
 Option Explicit
 Public MyRibbon As IRibbonUI
@@ -16,7 +13,7 @@ Sub OnLoad(ribbon As IRibbonUI)
     Set X.App = PowerPoint.Application
     'This option allows the tab to be activated on launch
     On Error Resume Next
-    MyRibbon.ActivateTab ("Strator")
+    MyRibbon.ActivateTab ("ProDeck")
 End Sub
 'Callback for all Style Buttons getPressed
 Sub getPressedStyleBtn(control As IRibbonControl, ByRef returnedVal)

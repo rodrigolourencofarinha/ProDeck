@@ -1,6 +1,3 @@
-' Extracted from: CleanText.bas
-' Source: ProDeck_v1_6_3.pptm
-
 Attribute VB_Name = "CleanText"
 Sub Remove_Line_Break()
 On Error Resume Next

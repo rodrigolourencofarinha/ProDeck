@@ -1,6 +1,3 @@
-' Extracted from: CleanDeck.bas
-' Source: ProDeck_v1_6_3.pptm
-
 Attribute VB_Name = "CleanDeck"
 Sub Remove_All_Comments()
 Dim oSl As slide

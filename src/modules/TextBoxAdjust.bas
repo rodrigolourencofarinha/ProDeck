@@ -1,6 +1,3 @@
-' Extracted from: TextBoxAdjust.bas
-' Source: ProDeck_v1_6_3.pptm
-
 Attribute VB_Name = "TextBoxAdjust"
 Sub Wrap_Text()
 

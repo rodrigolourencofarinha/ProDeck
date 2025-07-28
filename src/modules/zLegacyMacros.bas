@@ -1,6 +1,3 @@
-' Extracted from: zLegacyMacros.bas
-' Source: ProDeck_v1_6_3.pptm
-
 Attribute VB_Name = "zLegacyMacros"
 Sub Grid_Shapes()
 'START: Error message message box -----------------------------------------------

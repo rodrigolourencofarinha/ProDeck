@@ -1,6 +1,3 @@
-' Extracted from: SpellcheckLanguage.bas
-' Source: ProDeck_v1_6_3.pptm
-
 Attribute VB_Name = "SpellcheckLanguage"
 
 Function ChangeSpellCheckLanguage(TargetLanguageID As String)

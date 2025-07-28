@@ -1,6 +1,3 @@
-' Extracted from: BatchAddRemove.bas
-' Source: ProDeck_v1_6_3.pptm
-
 Attribute VB_Name = "BatchAddRemove"
 Sub Delete_Similar_Objects()
 

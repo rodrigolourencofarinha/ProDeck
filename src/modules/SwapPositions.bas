@@ -1,6 +1,3 @@
-' Extracted from: SwapPositions.bas
-' Source: ProDeck_v1_6_3.pptm
-
 Attribute VB_Name = "SwapPositions"
 Function Swap_Positions(Position As String)
    
