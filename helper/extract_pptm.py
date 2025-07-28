@@ -114,6 +114,17 @@ def extract_pptm_vba(pptm_path, output_folder):
         extract_dir = temp_dir / "extracted"
         with zipfile.ZipFile(zip_path, 'r') as zip_ref:
             zip_ref.extractall(extract_dir)
+
+        # Step 2.5: Copy .frx files from extracted folder to forms_folder
+        forms_zip_folder = extract_dir / "ppt" / "forms"
+        if forms_zip_folder.exists():
+            for frx_file in forms_zip_folder.glob("*.frx"):
+                dest = forms_folder / frx_file.name
+                shutil.copy2(frx_file, dest)
+                print(f"    📦 Copied form binary: {frx_file.name}")
+        else:
+            print("  ⚠ No embedded .frx forms found in archive")
+
         
         # Step 3: Copy customUI14 (Ribbon)
         print("🎀 Processing Ribbon (customUI14)...")
