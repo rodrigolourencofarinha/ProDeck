@@ -1,5 +1,5 @@
 Attribute VB_Name = "ColorPickerForm"
-Attribute VB_Base = "0{61699AC4-8F48-44E7-A6B0-7C6C73D188A0}{92748C39-B1C0-4D04-810C-05C1DBEB01AA}"
+Attribute VB_Base = "0{FFA9FB94-1945-4143-A377-39B53A0B1585}{33A9A5F3-C759-4ACA-AF25-C549B761CBE2}"
 Attribute VB_GlobalNameSpace = False
 Attribute VB_Creatable = False
 Attribute VB_PredeclaredId = True
