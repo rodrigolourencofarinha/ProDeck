@@ -1,5 +1,5 @@
 Attribute VB_Name = "SpellcheckLanguage"
-
+'DEPRECATED ON V.1.7.1 - USING DEFAULT POWERPOINT FUNCTION
 Function ChangeSpellCheckLanguage(TargetLanguageID As String)
 
     Dim TargetLanguage As String

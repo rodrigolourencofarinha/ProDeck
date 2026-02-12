@@ -1867,9 +1867,10 @@ Sub EnabledBtInfo(control As IRibbonControl, ByRef returnedVal)
                 End If
                 
         Case "Language"
+                'DEPRECATED ON V.1.7.1 - USING DEFAULT POWERPOINT FUNCTION
                 On Error Resume Next
                 #If Mac Then
-                returnedVal = False
+                    returnedVal = False
                 #Else
                     If ActiveWindow.ActivePane.ViewType = ppViewHandoutMaster Then
                     returnedVal = False
@@ -1995,8 +1996,6 @@ Sub RibbonObjectGetImage(control As IRibbonControl, ByRef returnedVal)
             returnedVal = "MergeOrSplitCells"
         Case "CleanText"
             returnedVal = "PointEraserMedium"
-        Case "ClassifyMenu"
-            returnedVal = "TouchTriageMarkComplete"
         Case "About"
             returnedVal = "Help"
     End Select
@@ -2022,8 +2021,6 @@ Sub RibbonObjectGetImage(control As IRibbonControl, ByRef returnedVal)
             returnedVal = "ContentControlsUngroup"
         Case "CleanText"
             returnedVal = "GroupRemoveHiddenInformation"
-        Case "ClassifyMenu"
-            returnedVal = "StampTool"
         Case "About"
             returnedVal = "ResultsPaneAccessibilityMoreInfo"
     End Select

@@ -4,7 +4,7 @@
             <tab id="ProDeck" label="ProDeck" keytip="X">               
                 <group id="GroupInsert" label="Insert" imageMso="SlideNewGallery"> 
                     <control idMso="SlideNewGallery" showLabel="false" keytip="SI"/>
-                    <gallery idMso="ShapesInsertGallery" showLabel="false" />
+                    <control idMso="ShapesInsertGallery" showLabel="false" />
                     <control idMso="PasteMenu" showLabel="false" keytip="PM"/>
                     <control idMso="TableInsertGallery" showLabel="false" keytip="TI"/>     
                     <control idMso="FlyoutAnchorInsertPictures" showLabel="false" keytip="IP"/>
@@ -63,7 +63,7 @@
                 </group > 
                 <group id="GroupFontPragraph" label="Font and Paragraph" imageMso="ChangeCaseGallery">
                     <box id="BoxFont" boxStyle="horizontal">
-                        <comboBox idMso="Font" showLabel="false" sizeString="WWWWW"/>
+                        <control idMso="Font" showLabel="false"/>
                         <control idMso="FontSize" showLabel="false"/>
                         <control idMso="FontSizeIncrease" showLabel="false"/>
                         <control idMso="FontSizeDecrease" showLabel="false"/>  
@@ -73,13 +73,15 @@
                         <control idMso="Italic" showLabel="false"/>
                         <control idMso="Underline" showLabel="false"/>
                         <control idMso="Strikethrough" showLabel="false"/>
-                        <control idMso="ChangeCaseGallery" showLabel="false"/>  
                         <control idMso="CharacterSpacingGallery" showLabel="false"/>
+                        <control idMso="ClearFormatting" showLabel="false"/>
+                        <control idMso="ChangeCaseGallery" showLabel="false"/>  
                     </box>
                     <box id="BoxAlignText" boxStyle="horizontal">
                         <control idMso="AlignLeft" showLabel="false"/>
                         <control idMso="AlignCenter" showLabel="false"/>
                         <control idMso="AlignRight" showLabel="false"/>
+                        <control idMso="AlignJustify" showLabel="false"/>
                         <control idMso="TableColumnsGallery" showLabel="false"/>
                         <control idMso="Superscript" showLabel="false"/>
                         <control idMso="Subscript" showLabel="false"/>   
@@ -112,7 +114,7 @@
                             <button id="BulletsDashes" label="Dash" showLabel="false" imageMso="OutlineCollapse" onAction="TextBulletsDashes" /> 
                             <button id="BulletsCrosses" label="Crosses" showLabel="false" imageMso="DeclineInvitation" onAction="TextBulletsCrosses" />  
                         </menu>   
-                        <control idMso="PowerPointParagraphDialog" showLabel="false" keytip="PG"/>   
+                        <control idMso="LineSpacingGalleryPowerPoint" showLabel="false" keytip="PG"/>   
                     </box>
                     <separator id="SeparatorTextFrame" />     
                     <control idMso="TextDirectionGallery" showLabel="false" />
@@ -248,7 +250,7 @@
                             <button id="Swap_BottomLeft" label="Bottom and Left" image="SwapBottomLeft" onAction="Swap_BottomLeft" />
                             <button id="Swap_BottomCenter" label="Bottom and Center" image="SwapBottomCenter" onAction="Swap_BottomCenter" />
                             <button id="Swap_BottomRight" label="Bottom and Right" image="SwapBottomRight" onAction="Swap_BottomRight" />
-                            <button id="Swap_Text" label="Text Without Formatting" imageMso="InkCovertToTextVisio" onAction="Swap_Text_NoFormat"
+                            <button id="Swap_Text" label="Text Without Formatting" imageMso="ReplaceDialog" onAction="Swap_Text_NoFormat"
                             getEnabled="EnabledBtInfo"/>
                         </menu>
                     </splitButton>
@@ -322,29 +324,20 @@
                     <button id="Split_Text_Boxes" label="Split Text" getImage="RibbonObjectGetImage" onAction="Split_Text_Boxes" showLabel="false" keytip="STB"
                     screentip="Split Text" supertip="Split text between multiple objects by paragraph. Keeps the original text and object formatting.&#13;&#13;Bulleted and numbered list items are considered paragraphs."
                     getEnabled="EnabledBtInfo"/>
-                    <control idMso="CombineShapesGallery" showLabel="false" keytip="MS" />
-                    <control idMso="FontsReplaceFonts" label="Replace Fonts" showLabel="false" keytip="RF"/>
-                    <control idMso="Translator" label="Translate" showLabel="false" keytip="TRT" />
-                    <menu id="Language" image="LanguageUS" label="Language" showLabel="false" keytip="PRL" 
-                    screentip="Change Proofing Language" supertip="Change language on all slides alternating between Portuguese (Brazil), English (US), and Spanish."
-                    getEnabled="EnabledBtInfo">
-                        <button id="Language_US" label="English (US)" image="LanguageUS" showLabel="true" onAction="Language_US"/>
-                        <button id="Language_BR" label="Portuguese (BR)" image="LanguageBR" showLabel="true" onAction="Language_BR"/>
-                        <button id="Language_ES" label="Spanish (ES)" showLabel="true"  image="LanguageES" onAction="Language_ES"/>
-                        <button id="Language_FR" label="French (FR)" image="LanguageFR" showLabel="true" onAction="Language_FR"/>
-                        <button id="Language_DE" label="German (DE)" showLabel="true"  image="LanguageDE" onAction="Language_DE"/>                       
-                        <control idMso="SetLanguage" showLabel="true" /> 
-                    </menu>
+                    <control idMso="CombineShapesGallery" showLabel="false" keytip="MS" />     
+                    <button id="btnReplaceFonts" imageMso="InkCovertToTextVisio" showLabel="false" onAction="ReplaceFonts"/>
+                    <control idMso="Translator" showLabel="false" keytip="TRT" />
+                    <control idMso="SetLanguage" showLabel="false" keytip="PRL" />
                 </group >                        
                 <group id="GroupClean" label="Finish Up" imageMso="QueryBuilder"> 
-                    <menu  id="CleanDeck" label="Clean Deck" showLabel="true" imageMso="ReviewDeleteMarkup" keytip="CLN"
-                    screentip="Clean Deck" supertip="Delete confidential information and optimize file size by compressing pictures and deleting unwanted layouts, shapes, comments, notes, animations, and transitions."
+                    <menu  id="CleanDeck" label="Cleanup" showLabel="true" imageMso="ReviewDeleteMarkup" keytip="CLN"
+                    screentip="Cleanup" supertip="Remove sensitive information and optimize file size by compressing pictures and deleting unwanted layouts, shapes, comments, notes, animations, and transitions."
                     getEnabled="EnabledBtInfo">
                         <menuSeparator id="CleanText" title="Line Breaks and Double Spaces"/>
                         <button id="Remove_Line_Break" label="Remove Line Breaks" imageMso="StylesStyleSeparator" onAction="Remove_Line_Break" 
                         screentip="Remove Line Breaks" supertip="Remove all line breaks from a selected shape."
                         getEnabled="EnabledBtInfo"/>
-                        <button id="Remove_Spaces" label="Remove Double Spaces from Selected Slides" imageMso="ShowNbspMark" onAction="Remove_Spaces"
+                        <button id="Remove_Spaces" label="Remove Double Spaces from Selected Slides" imageMso="DataValidationClearValidationCircles" onAction="Remove_Spaces"
                         screentip="Remove Double Spaces from Selected Slides" supertip="Searches all double spaces in the selected slides and replaces them with single spaces."
                         getEnabled="EnabledBtInfo"/>
                         <menuSeparator id="ExportMenuSeparator" title="Export Notes and Comments"/>
@@ -375,8 +368,8 @@
                         <button id="Delete_Unused_Layouts" label="Delete Unused Layouts" imageMso="SlideDelete" onAction="Remove_Unused_Layouts"
                         screentip="Delete Unused Layouts" supertip="Delete unused layouts from slide master."/>
                         <menuSeparator id="Confidentiality" title="Confidentiality Settings"/>
-                        <control idMso="AdvancedFileProperties" label="Edit Document Properties"/>
                         <button id="anonymize" label="Anonymize Selected Slides with Lorem Ipsum" imageMso="Clear" onAction="AnonymizeWithLoremIpsum" />  
+                        <control idMso="AdvancedFileProperties" label="Advanced File Properties"/> 
                     </menu>
                     <menu id="StampsMenu" label="Labels" showLabel="true" imageMso="NameDefine" keytip="LBL"
                     screentip="Stamp Slides" supertip="Create labels to indicate status or clarify content and slides."
@@ -390,20 +383,20 @@
                         <button id="StampS_Front" label="Bring Slide Labels to Front" imageMso="SendReceiveAll" showLabel="true" onAction="StampS_Front"/>
                         <button id="StampS_Delete" label="Remove All Slide Labels" imageMso="Delete" showLabel="true" onAction="StampS_Delete"/>
                         <menuSeparator id="StampCMenuSeparator" title="Label Content"/>
-                        <button id="StampC_Draft" label="DRAFT" showLabel="true" imageMso="InsertHR" onAction="StampC_Draft" />
-                        <button id="StampC_Preliminary" label="PRELIMINARY" showLabel="true" imageMso="InsertHR"  onAction="StampC_Preliminary"/>
-                        <button id="StampC_Illustrative" label="ILLUSTRATIVE" showLabel="true" imageMso="InsertHR"  onAction="StampC_Illustrative"/>
-                        <button id="StampC_Not_Exhaustive" label="NOT EXHAUSTIVE" showLabel="true" imageMso="InsertHR"  onAction="StampC_Not_Exhaustive"/>
-                        <button id="StampC_Discussion" label="FOR DISCUSSION" showLabel="true" imageMso="InsertHR"  onAction="StampC_Discussion"/>
+                        <button id="StampC_Draft" label="DRAFT" showLabel="true" imageMso="TextAlignStretchJustify" onAction="StampC_Draft" />
+                        <button id="StampC_Preliminary" label="PRELIMINARY" showLabel="true" imageMso="TextAlignStretchJustify"  onAction="StampC_Preliminary"/>
+                        <button id="StampC_Illustrative" label="ILLUSTRATIVE" showLabel="true" imageMso="TextAlignStretchJustify"  onAction="StampC_Illustrative"/>
+                        <button id="StampC_Not_Exhaustive" label="NOT EXHAUSTIVE" showLabel="true" imageMso="TextAlignStretchJustify"  onAction="StampC_Not_Exhaustive"/>
+                        <button id="StampC_Discussion" label="FOR DISCUSSION" showLabel="true" imageMso="TextAlignStretchJustify"  onAction="StampC_Discussion"/>
                     </menu>                    
-                    <menu id="ClassifyMenu" label="Classify Content" showLabel="true" getImage="RibbonObjectGetImage" keytip="CD"
-                    screentip="Classify Document" supertip="Classify document in terms of work progress or access restriction."> 
+                    <menu id="ClassifyMenu" label="Classification" showLabel="true" imageMso="TouchTriageMarkComplete" keytip="CD"
+                    screentip="Classification" supertip="Classify document in terms of work progress or access restriction."> 
                         <menuSeparator id="ClassifyMenuSeparator" title="Classify Document"/>
-                        <button id="StampD_Draft" label="DRAFT MATERIAL" showLabel="true" imageMso="StampTool" onAction="StampD_Draft"/>
-                        <button id="StampD_Preliminary" label="PRELIMINARY MATERIAL" showLabel="true" imageMso="StampTool" onAction="StampD_Preliminary"/>
-                        <button id="StampD_Confidential" label="CONFIDENTIAL MATERIAL" showLabel="true" imageMso="StampTool" onAction="StampD_Confidential"/>
-                        <button id="StampD_Distibute" label="DO NOT DISTRIBUTE" showLabel="true" imageMso="StampTool" onAction="StampD_Distibute"/>
-                        <button id="StampD_Internal" label="FOR INTERNAL USE ONLY" showLabel="true" imageMso="StampTool" onAction="StampD_Internal"/>
+                        <button id="StampD_Draft" label="DRAFT MATERIAL" showLabel="true" imageMso="TouchTriageMarkComplete" onAction="StampD_Draft"/>
+                        <button id="StampD_Preliminary" label="PRELIMINARY MATERIAL" showLabel="true" imageMso="TouchTriageMarkComplete" onAction="StampD_Preliminary"/>
+                        <button id="StampD_Confidential" label="CONFIDENTIAL MATERIAL" showLabel="true" imageMso="TouchTriageMarkComplete" onAction="StampD_Confidential"/>
+                        <button id="StampD_Distibute" label="DO NOT DISTRIBUTE" showLabel="true" imageMso="TouchTriageMarkComplete" onAction="StampD_Distibute"/>
+                        <button id="StampD_Internal" label="FOR INTERNAL USE ONLY" showLabel="true" imageMso="TouchTriageMarkComplete" onAction="StampD_Internal"/>
                         <button id="StampD_Update" label="Update Stamp Based on the Selected One" imageMso="SendReceiveAll" showLabel="true" onAction="StampD_Update"
                         getEnabled="EnabledBtInfo"/>
                         <button id="StampD_Delete" label="Remove Stamp" imageMso="Delete" showLabel="true" onAction="StampD_Delete"/>
@@ -413,6 +406,7 @@
                     </menu>
                     <button id="About" label="About ProDeck" showLabel="false" getImage="RibbonObjectGetImage" onAction="About" keytip="PDK"/>
                     <button id="ActivateProDeckTab" label="Go To ProDeck Tab" imageMso="OfficeExtensionsFeaturedApp1" onAction="ActivateProDeckTab" visible="false" />
+                    <button id="PasteValue" label="Paste values" imageMso="PasteTextOnly" onAction="PasteValue" visible="false" />
                     <button id="Grid_Shapes" label="Create Grid of Shapes" onAction="Grid_Shapes" imageMso="TableSelectVisibleCells" showLabel="false" visible="false"
                     screentip="Create Grid of Shape" supertip="Split the selected object into evenly sized copies of itself.&#13;&#13;Inform the number of columns and rows in which the object will be divided."
                     getEnabled="EnabledBtInfo"/>   
