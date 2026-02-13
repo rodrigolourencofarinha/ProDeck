@@ -1865,62 +1865,31 @@ Sub EnabledBtInfo(control As IRibbonControl, ByRef returnedVal)
                 Else
                 returnedVal = True
                 End If
-                
-        Case "Language"
-                'DEPRECATED ON V.1.7.1 - USING DEFAULT POWERPOINT FUNCTION
-                On Error Resume Next
-                #If Mac Then
-                    returnedVal = False
-                #Else
-                    If ActiveWindow.ActivePane.ViewType = ppViewHandoutMaster Then
-                    returnedVal = False
-                    ElseIf ActiveWindow.ActivePane.ViewType = ppViewMasterThumbnails Then
-                    returnedVal = False
-                    ElseIf ActiveWindow.ActivePane.ViewType = ppViewNotesMaster Then
-                    returnedVal = False
-                    ElseIf ActiveWindow.ActivePane.ViewType = ppViewNotesPage Then
-                    returnedVal = False
-                    ElseIf ActiveWindow.ActivePane.ViewType = ppViewPrintPreview Then
-                    returnedVal = False
-                    ElseIf ActiveWindow.ActivePane.ViewType = ppViewSlideMaster Then
-                    returnedVal = False
-                    ElseIf ActiveWindow.ActivePane.ViewType = ppViewSlideSorter Then
-                    returnedVal = False
-                    ElseIf ActiveWindow.ActivePane.ViewType = ppViewTitleMaster Then
-                    returnedVal = False
-                    Else
-                    returnedVal = True
-                    End If
-                #End If
         
         Case "Replace_Colors"
                 On Error Resume Next
-                
-                #If Mac Then
+                If ActiveWindow.ActivePane.ViewType = ppViewHandoutMaster Then
                 returnedVal = False
-                #Else
-                    If ActiveWindow.ActivePane.ViewType = ppViewHandoutMaster Then
-                    returnedVal = False
-                    ElseIf ActiveWindow.ActivePane.ViewType = ppViewMasterThumbnails Then
-                    returnedVal = False
-                    ElseIf ActiveWindow.ActivePane.ViewType = ppViewNotesMaster Then
-                    returnedVal = False
-                    ElseIf ActiveWindow.ActivePane.ViewType = ppViewNotesPage Then
-                    returnedVal = False
-                    ElseIf ActiveWindow.ActivePane.ViewType = ppViewPrintPreview Then
-                    returnedVal = False
-                    ElseIf ActiveWindow.ActivePane.ViewType = ppViewSlideMaster Then
-                    returnedVal = False
-                    ElseIf ActiveWindow.ActivePane.ViewType = ppViewSlideSorter Then
-                    returnedVal = False
-                    ElseIf ActiveWindow.ActivePane.ViewType = ppViewTitleMaster Then
-                    returnedVal = False
-                    ElseIf ActiveWindow.Selection.SlideRange.Count = 0 Then
-                    returnedVal = False
-                    Else
-                    returnedVal = True
-                    End If
-                #End If
+                ElseIf ActiveWindow.ActivePane.ViewType = ppViewMasterThumbnails Then
+                returnedVal = False
+                ElseIf ActiveWindow.ActivePane.ViewType = ppViewNotesMaster Then
+                returnedVal = False
+                ElseIf ActiveWindow.ActivePane.ViewType = ppViewNotesPage Then
+                returnedVal = False
+                ElseIf ActiveWindow.ActivePane.ViewType = ppViewPrintPreview Then
+                returnedVal = False
+                ElseIf ActiveWindow.ActivePane.ViewType = ppViewSlideMaster Then
+                returnedVal = False
+                ElseIf ActiveWindow.ActivePane.ViewType = ppViewSlideSorter Then
+                returnedVal = False
+                ElseIf ActiveWindow.ActivePane.ViewType = ppViewTitleMaster Then
+                returnedVal = False
+                ElseIf ActiveWindow.Selection.SlideRange.Count = 0 Then
+                returnedVal = False
+                Else
+                returnedVal = True
+                End If
+
                 
         
         Case "StampD_Update"
@@ -1971,6 +1940,20 @@ Sub EnabledBtInfo(control As IRibbonControl, ByRef returnedVal)
     
     Call RefreshRibbon(control.Id)
     
+End Sub
+Public Sub IsMac(control As IRibbonControl, ByRef returnedVal)
+#If Mac Then
+    returnedVal = True
+#Else
+    returnedVal = False
+#End If
+End Sub
+Public Sub IsWindows(control As IRibbonControl, ByRef returnedVal)
+#If Mac Then
+    returnedVal = False
+#Else
+    returnedVal = True
+#End If
 End Sub
 Sub RibbonObjectGetImage(control As IRibbonControl, ByRef returnedVal)
 

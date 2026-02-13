@@ -161,7 +161,7 @@ mbResult = MsgBox("Delete transitions from all slides?", _
 End Select
 End Sub
 Sub Remove_Unused_Layouts()
-Dim I As Integer
+Dim i As Integer
 Dim J As Integer
 Dim Counter As Long
 Dim oPres As Presentation
@@ -178,11 +178,11 @@ Select Case mbResult
        Set oPres = ActivePresentation
        On Error Resume Next
        With oPres
-           For I = 1 To .Designs.Count
-               For J = .Designs(I).SlideMaster.CustomLayouts.Count To 1 Step -1
-                   .Designs(I).SlideMaster.CustomLayouts(J).Delete
+           For i = 1 To .Designs.Count
+               For J = .Designs(i).SlideMaster.CustomLayouts.Count To 1 Step -1
+                   .Designs(i).SlideMaster.CustomLayouts(J).Delete
                        Next
-           Next I
+           Next i
        End With
        
    Case vbCancel

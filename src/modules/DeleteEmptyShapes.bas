@@ -5,15 +5,15 @@ Sub Delete_Empty_Shapes()
 Dim oSl As slide
 Dim oSh As Shape
 Dim oShg As Shape
-Dim I As Integer
+Dim i As Integer
 
 On Error Resume Next
 
 For Each oSl In ActiveWindow.Presentation.Slides
 
-    For I = oSl.Shapes.Count To 1 Step -1
+    For i = oSl.Shapes.Count To 1 Step -1
     
-        Set oSh = oSl.Shapes(I)
+        Set oSh = oSl.Shapes(i)
         
             If oSh.Type = msoTextBox Or oSh.Type = msoAutoShape Then
             
@@ -25,7 +25,7 @@ For Each oSl In ActiveWindow.Presentation.Slides
             
         Set oSh = Nothing
         
-    Next I
+    Next i
     
 Next oSl
 

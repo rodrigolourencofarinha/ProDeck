@@ -79,7 +79,7 @@ Dim shpTextRng As TextRange
 Dim sld As slide
 Dim shp As Shape
 Dim X As Long
-Dim I As Long
+Dim i As Long
 Dim J As Long
 
 For Each sld In ActiveWindow.Selection.SlideRange
@@ -111,18 +111,18 @@ For Each sld In ActiveWindow.Selection.SlideRange
                     
                 Case Is = msoTable
                 
-                        For I = 1 To .Table.Rows.Count
+                        For i = 1 To .Table.Rows.Count
                         
                             For J = 1 To .Table.Columns.Count
                             
-                                Set shpTextRng = shp.Table.Rows.Item(I).Cells(J).Shape.TextFrame.TextRange
+                                Set shpTextRng = shp.Table.Rows.Item(i).Cells(J).Shape.TextFrame.TextRange
                                 Do While InStr(shpTextRng.text, "  ") > 0
                                     shpTextRng.text = Replace(shpTextRng.text, "  ", " ")
                                 Loop
                                 
                             Next J
                             
-                        Next I
+                        Next i
             End Select
             
         End With

@@ -1,16 +1,11 @@
 Attribute VB_Name = "ColorPickerForm"
-Attribute VB_Base = "0{FFA9FB94-1945-4143-A377-39B53A0B1585}{33A9A5F3-C759-4ACA-AF25-C549B761CBE2}"
+Attribute VB_Base = "0{115FAA20-D722-4A7E-A871-33C7E4298C59}{40192C3E-139D-41A7-A518-6E2B443D546F}"
 Attribute VB_GlobalNameSpace = False
 Attribute VB_Creatable = False
 Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
 Attribute VB_TemplateDerived = False
 Attribute VB_Customizable = False
-
-
-
-
-
 Option Explicit
 
 '*************************************************************
@@ -18,6 +13,7 @@ Option Explicit
 Private SelectedColor As ColorPickerUtils.PickColor
 Private InitColor As ColorPickerUtils.PickColor
 Private MyStandardColors As New Collection
+Private IsUpdatingUI As Boolean
 
 '*************************************************************
 ' Initilialize
@@ -54,6 +50,10 @@ Public Sub SetInitColor(ByVal color As Long)
     updateColor
 End Sub
 
+Private Sub GreenBarOld_Change()
+
+End Sub
+
 '*************************************************************
 ' TextBox functions
 
@@ -80,11 +80,25 @@ Private Sub LongBox_Change()
 End Sub
 
 Private Sub HexBox_KeyDown(ByVal KeyCode As MSForms.ReturnInteger, ByVal Shift As Integer)
+    If KeyCode = 13 Then HexBox_Change
+End Sub
+
+Private Sub HexBox_Change()
+    If IsUpdatingUI Then Exit Sub
+
+    Dim s As String
+    s = UCase$(Trim$(HexBox.value))
+
+    ' Allow user to type "#FFAABB"
+    If Left$(s, 1) = "#" Then s = Mid$(s, 2)
+
+    ' Only parse when complete
+    If Len(s) <> 6 Then Exit Sub
+    If Not s Like "[0-9A-F][0-9A-F][0-9A-F][0-9A-F][0-9A-F][0-9A-F]" Then Exit Sub
+
     On Error Resume Next
-        If KeyCode = 13 Then
-            SelectedColor = GetRGBFromHex(HexBox.value)
-            updateColor
-        End If
+        SelectedColor = GetRGBFromHex(s)
+        updateColor
     On Error GoTo 0
 End Sub
 
@@ -106,20 +120,20 @@ Private Sub BlueBar_Change()
     updateColor
 End Sub
 
-Private Sub RedBar_Scroll()
-    SelectedColor.red = RedBar.value
-    updateColor
-End Sub
+'Private Sub RedBar_Scroll()
+'    SelectedColor.red = RedBar.value
+'    updateColor
+'End Sub
 
-Private Sub GreenBar_Scroll()
-    SelectedColor.green = GreenBar.value
-    updateColor
-End Sub
+'Private Sub GreenBar_Scroll()
+'    SelectedColor.green = GreenBar.value
+'    updateColor
+'End Sub
 
-Private Sub BlueBar_Scroll()
-    SelectedColor.blue = BlueBar.value
-    updateColor
-End Sub
+'Private Sub BlueBar_Scroll()
+'    SelectedColor.blue = BlueBar.value
+'    updateColor
+'End Sub
 
 
 '*************************************************************
@@ -140,6 +154,13 @@ Private Sub CommandButtonEsc_Click()
     ColorPickerForm.Hide
     Exit Sub
 End Sub
+
+
+Private Sub ScrollBar1_Change()
+    SelectedColor.green = GreenBar.value
+    updateColor
+End Sub
+
 Private Sub UserForm_QueryClose(Cancel As Integer, CloseMode As Integer)
 
 If CloseMode = vbFormControlMenu Then
@@ -156,10 +177,16 @@ End Sub
 
 ' set the color label background color
 Private Sub updateColor()
+    IsUpdatingUI = True
+
     With SelectedColor
         ColorLabel.BackColor = RGB(.red, .green, .blue)
         LongBox.value = RGB(.red, .green, .blue)
-        HexBox.value = GetHexFromRGB(SelectedColor)
+
+        If Not (Me.ActiveControl Is HexBox) Then
+            HexBox.value = GetHexFromRGB(SelectedColor)
+        End If
+
         RedBox.value = .red
         RedBar.value = .red
         GreenBox.value = .green
@@ -167,6 +194,8 @@ Private Sub updateColor()
         BlueBox.value = .blue
         BlueBar.value = .blue
     End With
+
+    IsUpdatingUI = False
 End Sub
 
 ' set the color to the value parsed from text, with limits of

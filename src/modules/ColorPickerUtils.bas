@@ -69,22 +69,17 @@ Function GetRGBFromHex(hexString As String) As PickColor
     GetRGBFromHex = GetRGBFromLong(GetLongFromHex(hexString))
     
 End Function
-Function Hex2Dec(h)
+Public Function Hex2Dec(ByVal h As String) As Long
+    h = Replace$(h, "#", "")
+    h = Replace$(h, "&H", "")
+    h = Replace$(h, "&h", "")
 
-Dim L As Long: L = Len(h)
-
-If L < 16 Then               ' CDec results in Overflow error for hex numbers above 16 ^ 8
-
-    Hex2Dec = CDec("&h0" & h)
-    
-    If Hex2Dec < 0 Then Hex2Dec = Hex2Dec + 4294967296# ' 2 ^ 32
-    
-ElseIf L < 25 Then
-
-    Hex2Dec = Hex2Dec(Left$(h, L - 9)) * 68719476736# + CDec("&h" & Right$(h, 9)) ' 16 ^ 9 = 68719476736
-    
-End If
-    
+    If Len(h) = 0 Then
+        Hex2Dec = 0
+    Else
+        ' Works on Mac/Windows for typical color hex (<= 8 hex digits)
+        Hex2Dec = CLng("&H" & h)
+    End If
 End Function
 Function GetLongFromHex(hexColor As String) As Long
 

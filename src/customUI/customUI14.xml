@@ -5,7 +5,8 @@
                 <group id="GroupInsert" label="Insert" imageMso="SlideNewGallery"> 
                     <control idMso="SlideNewGallery" showLabel="false" keytip="SI"/>
                     <control idMso="ShapesInsertGallery" showLabel="false" />
-                    <control idMso="PasteMenu" showLabel="false" keytip="PM"/>
+                    <control idMso="PasteMenu" showLabel="false" getVisible="IsWindows" keytip="PM"/>
+                    <control idMso="PasteGallery" showLabel="false" getVisible="IsMac"/>
                     <control idMso="TableInsertGallery" showLabel="false" keytip="TI"/>     
                     <control idMso="FlyoutAnchorInsertPictures" showLabel="false" keytip="IP"/>
                     <control idMso="IconInsertFromFile" showLabel="false" keytip="NS"/>
@@ -318,10 +319,10 @@
                     <control idMso="SelectionPane" showLabel="false" />                                               
                 </group >       
                 <group id="ShapeText" label="Shape and Text" imageMso="CharacterShading"> 
-                    <button id="Merge_Text_Boxes" label="Merge Text" getImage="RibbonObjectGetImage" onAction="Merge_Text_Boxes" showLabel="false" keytip="MTB"
+                    <button id="Merge_Text_Boxes" label="Merge Text" imageMso="ReviewCombineRevisions" onAction="Merge_Text_Boxes" showLabel="false" keytip="MTB"
                     screentip="Merge Text" supertip="Merge text within selected objects into a single object. Text will be merged into the first shape you selected. Original text formatting is retained."
                     getEnabled="EnabledBtInfo"/>
-                    <button id="Split_Text_Boxes" label="Split Text" getImage="RibbonObjectGetImage" onAction="Split_Text_Boxes" showLabel="false" keytip="STB"
+                    <button id="Split_Text_Boxes" label="Split Text" imageMso="ReviewCompareMenu" onAction="Split_Text_Boxes" showLabel="false" keytip="STB"
                     screentip="Split Text" supertip="Split text between multiple objects by paragraph. Keeps the original text and object formatting.&#13;&#13;Bulleted and numbered list items are considered paragraphs."
                     getEnabled="EnabledBtInfo"/>
                     <control idMso="CombineShapesGallery" showLabel="false" keytip="MS" />     
@@ -337,7 +338,7 @@
                         <button id="Remove_Line_Break" label="Remove Line Breaks" imageMso="StylesStyleSeparator" onAction="Remove_Line_Break" 
                         screentip="Remove Line Breaks" supertip="Remove all line breaks from a selected shape."
                         getEnabled="EnabledBtInfo"/>
-                        <button id="Remove_Spaces" label="Remove Double Spaces from Selected Slides" imageMso="DataValidationClearValidationCircles" onAction="Remove_Spaces"
+                        <button id="Remove_Spaces" label="Remove Double Spaces from Selected Slides" imageMso="FieldInsert" onAction="Remove_Spaces"
                         screentip="Remove Double Spaces from Selected Slides" supertip="Searches all double spaces in the selected slides and replaces them with single spaces."
                         getEnabled="EnabledBtInfo"/>
                         <menuSeparator id="ExportMenuSeparator" title="Export Notes and Comments"/>
@@ -383,11 +384,11 @@
                         <button id="StampS_Front" label="Bring Slide Labels to Front" imageMso="SendReceiveAll" showLabel="true" onAction="StampS_Front"/>
                         <button id="StampS_Delete" label="Remove All Slide Labels" imageMso="Delete" showLabel="true" onAction="StampS_Delete"/>
                         <menuSeparator id="StampCMenuSeparator" title="Label Content"/>
-                        <button id="StampC_Draft" label="DRAFT" showLabel="true" imageMso="TextAlignStretchJustify" onAction="StampC_Draft" />
-                        <button id="StampC_Preliminary" label="PRELIMINARY" showLabel="true" imageMso="TextAlignStretchJustify"  onAction="StampC_Preliminary"/>
-                        <button id="StampC_Illustrative" label="ILLUSTRATIVE" showLabel="true" imageMso="TextAlignStretchJustify"  onAction="StampC_Illustrative"/>
-                        <button id="StampC_Not_Exhaustive" label="NOT EXHAUSTIVE" showLabel="true" imageMso="TextAlignStretchJustify"  onAction="StampC_Not_Exhaustive"/>
-                        <button id="StampC_Discussion" label="FOR DISCUSSION" showLabel="true" imageMso="TextAlignStretchJustify"  onAction="StampC_Discussion"/>
+                        <button id="StampC_Draft" label="DRAFT" showLabel="true" imageMso="FieldInsert" onAction="StampC_Draft" />
+                        <button id="StampC_Preliminary" label="PRELIMINARY" showLabel="true" imageMso="FieldInsert"  onAction="StampC_Preliminary"/>
+                        <button id="StampC_Illustrative" label="ILLUSTRATIVE" showLabel="true" imageMso="FieldInsert"  onAction="StampC_Illustrative"/>
+                        <button id="StampC_Not_Exhaustive" label="NOT EXHAUSTIVE" showLabel="true" imageMso="FieldInsert"  onAction="StampC_Not_Exhaustive"/>
+                        <button id="StampC_Discussion" label="FOR DISCUSSION" showLabel="true" imageMso="FieldInsert"  onAction="StampC_Discussion"/>
                     </menu>                    
                     <menu id="ClassifyMenu" label="Classification" showLabel="true" imageMso="TouchTriageMarkComplete" keytip="CD"
                     screentip="Classification" supertip="Classify document in terms of work progress or access restriction."> 
