@@ -2,7 +2,7 @@
 
 ProDeck is a PowerPoint add-in designed to help those who work extensively with PowerPoint, such as consultants. It provides a suite of tools to quickly assemble, format, and clean slide decks. While many paid products offer similar or more advanced functionalities, ProDeck was created to democratize access to these tools for individuals and small companies that may not have the budget for expensive software. ProDeck offers several features to help users edit slides more efficiently, saving valuable time.
 
-![ProDeck Toolbar](assets/ProDeck_v1.6.0_Toolbar.png)
+![ProDeck Toolbar](assets/ProDeck_v1.7.2_Toolbar.png)
 
 To install on Windows or Mac:
 - Download the `.ppam` in the [releases page](https://github.com/rodrigolourencofarinha/ProDeck/releases)
