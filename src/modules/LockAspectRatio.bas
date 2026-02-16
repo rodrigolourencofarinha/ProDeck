@@ -11,9 +11,9 @@ End Sub
 Sub OnLoad(ribbon As IRibbonUI)
     Set MyRibbon = ribbon
     Set X.App = PowerPoint.Application
-    'This option allows the tab to be activated on launch
-    On Error Resume Next
-    MyRibbon.ActivateTab ("ProDeck")
+    'Load persisted toggle state before applying startup behavior
+    InitializeAutoTabMonitoringSetting
+    MaybeActivateProDeckTab
 End Sub
 'Callback for all Style Buttons getPressed
 Sub getPressedStyleBtn(control As IRibbonControl, ByRef returnedVal)
@@ -70,5 +70,6 @@ Else
 End If
     
 End Sub
+
 
 

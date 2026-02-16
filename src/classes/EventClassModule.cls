@@ -23,23 +23,20 @@ Private Sub App_WindowSelectionChange(ByVal Sel As Selection)
         ElseIf ActiveWindow.Selection.ShapeRange.AnimationSettings.Animate = msoTrue Then
             Exit Sub
         Else
-            On Error Resume Next
-            MyRibbon.ActivateTab ("ProDeck")
+            MaybeActivateProDeckTab
         End If
     Else
         If ActiveWindow.Selection.Type = ppSelectionSlides Then
             Exit Sub
         Else
             If ActiveWindow.Selection.Type = ppSelectionText Then
-                On Error Resume Next
-                MyRibbon.ActivateTab ("ProDeck")
+                MaybeActivateProDeckTab
             Else
                 Exit Sub
             End If
         End If
     End If
 End Sub
-
 
 
 

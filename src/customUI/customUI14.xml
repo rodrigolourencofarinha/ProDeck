@@ -338,7 +338,7 @@
                         <button id="Remove_Line_Break" label="Remove Line Breaks" imageMso="StylesStyleSeparator" onAction="Remove_Line_Break" 
                         screentip="Remove Line Breaks" supertip="Remove all line breaks from a selected shape."
                         getEnabled="EnabledBtInfo"/>
-                        <button id="Remove_Spaces" label="Remove Double Spaces from Selected Slides" imageMso="FieldInsert" onAction="Remove_Spaces"
+                        <button id="Remove_Spaces" label="Remove Double Spaces from Selected Slides" imageMso="Clear" onAction="Remove_Spaces"
                         screentip="Remove Double Spaces from Selected Slides" supertip="Searches all double spaces in the selected slides and replaces them with single spaces."
                         getEnabled="EnabledBtInfo"/>
                         <menuSeparator id="ExportMenuSeparator" title="Export Notes and Comments"/>
@@ -369,7 +369,7 @@
                         <button id="Delete_Unused_Layouts" label="Delete Unused Layouts" imageMso="SlideDelete" onAction="Remove_Unused_Layouts"
                         screentip="Delete Unused Layouts" supertip="Delete unused layouts from slide master."/>
                         <menuSeparator id="Confidentiality" title="Confidentiality Settings"/>
-                        <button id="anonymize" label="Anonymize Selected Slides with Lorem Ipsum" imageMso="Clear" onAction="AnonymizeWithLoremIpsum" />  
+                        <button id="anonymize" label="Anonymize Selected Slides with Lorem Ipsum" imageMso="FileMarkAsReadOnlyRecommended" onAction="AnonymizeWithLoremIpsum" />  
                         <control idMso="AdvancedFileProperties" label="Advanced File Properties"/> 
                     </menu>
                     <menu id="StampsMenu" label="Labels" showLabel="true" imageMso="NameDefine" keytip="LBL"
@@ -405,7 +405,14 @@
                         <button id="Watermark_Add" label="Insert Watermark" imageMso="WatermarkCustomDialog" onAction="Watermark_Add" />
                         <button id="Watermark_Delete" label="Remove Watermark" imageMso="Delete" onAction="Watermark_Delete" />
                     </menu>
-                    <button id="About" label="About ProDeck" showLabel="false" getImage="RibbonObjectGetImage" onAction="About" keytip="PDK"/>
+                    <menu  id="Settings" label="ProDeck Settings" showLabel="false" image="ProDeck"
+                    screentip="ProDeck Settings" > 
+                        <toggleButton id="AutoTabMonitoring" label="Auto Activate ProDeck" imageMso="OfficeExtensionsFeaturedApp1" showLabel="false"
+                        onAction="ToggleAutoTabMonitoring" getPressed="GetAutoTabMonitoringPressed" keytip="ATM"
+                        screentip="Auto Activate ProDeck"
+                        supertip="When enabled, PowerPoint will automatically return to the ProDeck tab whenever a shape or text box is selected. If disabled, the ribbon will remain on the current tab."/>   
+                        <button id="About" label="About ProDeck" showLabel="false" getImage="RibbonObjectGetImage" onAction="About" keytip="PDK"/>
+                    </menu>
                     <button id="ActivateProDeckTab" label="Go To ProDeck Tab" imageMso="OfficeExtensionsFeaturedApp1" onAction="ActivateProDeckTab" visible="false" />
                     <button id="PasteValue" label="Paste values" imageMso="PasteTextOnly" onAction="PasteValue" visible="false" />
                     <button id="Grid_Shapes" label="Create Grid of Shapes" onAction="Grid_Shapes" imageMso="TableSelectVisibleCells" showLabel="false" visible="false"
