@@ -30,7 +30,7 @@ End Sub
 Sub Remove_All_Notes()
 Dim objSlide As slide
 Dim objShape As Shape
-Dim Counter As Long
+Dim counter As Long
 Dim mbResult As Integer
 
 'START: Message box prompt ------------------------------------------------------
@@ -60,9 +60,9 @@ Dim sld As slide
 Dim sldM As slide
 Dim X As Long
 Dim Y As Integer
-Dim W As Integer
+Dim w As Integer
 Dim Z As Integer
-Dim Counter As Long
+Dim counter As Long
 Dim mbResult As Integer
 
 'START: Message box prompt ------------------------------------------------------
@@ -86,24 +86,24 @@ Select Case mbResult
         For Z = 1 To ActivePresentation.Designs.Count
            
            On Error Resume Next
-           For W = ActivePresentation.Designs(Z).SlideMaster.TimeLine.MainSequence.Count To 1 Step -1
+           For w = ActivePresentation.Designs(Z).SlideMaster.TimeLine.MainSequence.Count To 1 Step -1
             'Remove Each Animation
-              ActivePresentation.Designs(Z).SlideMaster.TimeLine.MainSequence.Item(W).Delete
-           Next W
+              ActivePresentation.Designs(Z).SlideMaster.TimeLine.MainSequence.Item(w).Delete
+           Next w
            
         Next Z
          
         For Z = 1 To ActivePresentation.Designs.Count
            
-           For W = ActivePresentation.Designs(Z).SlideMaster.CustomLayouts.Count To 1 Step -1
+           For w = ActivePresentation.Designs(Z).SlideMaster.CustomLayouts.Count To 1 Step -1
             
-               For Y = ActivePresentation.Designs(Z).SlideMaster.CustomLayouts(W).TimeLine.MainSequence.Count To 1 Step -1
+               For Y = ActivePresentation.Designs(Z).SlideMaster.CustomLayouts(w).TimeLine.MainSequence.Count To 1 Step -1
                  'Remove Each Animation
-                   ActivePresentation.Designs(Z).SlideMaster.CustomLayouts(W).TimeLine.MainSequence.Item(Y).Delete
+                   ActivePresentation.Designs(Z).SlideMaster.CustomLayouts(w).TimeLine.MainSequence.Item(Y).Delete
                    
                Next Y
                
-           Next W
+           Next w
            
         Next Z
         
@@ -117,7 +117,7 @@ End Select
 End Sub
 Sub Remove_Transitions()
 Dim sld As slide
-Dim Counter As Long
+Dim counter As Long
 Dim mbResult As Integer
 
 'START: Message box prompt ------------------------------------------------------
@@ -142,14 +142,14 @@ mbResult = MsgBox("Delete transitions from all slides?", _
             ActivePresentation.Designs(Z).SlideMaster.SlideShowTransition.AdvanceOnClick = True
             ActivePresentation.Designs(Z).SlideMaster.SlideShowTransition.EntryEffect = ppEffectNone
            
-           For W = ActivePresentation.Designs(Z).SlideMaster.CustomLayouts.Count To 1 Step -1
+           For w = ActivePresentation.Designs(Z).SlideMaster.CustomLayouts.Count To 1 Step -1
             
                 On Error Resume Next
-                ActivePresentation.Designs(Z).SlideMaster.CustomLayouts(W).SlideShowTransition.AdvanceOnTime = False
-                ActivePresentation.Designs(Z).SlideMaster.CustomLayouts(W).SlideShowTransition.AdvanceOnClick = True
-                ActivePresentation.Designs(Z).SlideMaster.CustomLayouts(W).SlideShowTransition.EntryEffect = ppEffectNon
+                ActivePresentation.Designs(Z).SlideMaster.CustomLayouts(w).SlideShowTransition.AdvanceOnTime = False
+                ActivePresentation.Designs(Z).SlideMaster.CustomLayouts(w).SlideShowTransition.AdvanceOnClick = True
+                ActivePresentation.Designs(Z).SlideMaster.CustomLayouts(w).SlideShowTransition.EntryEffect = ppEffectNon
                
-           Next W
+           Next w
            
         Next Z
         
@@ -163,7 +163,7 @@ End Sub
 Sub Remove_Unused_Layouts()
 Dim i As Integer
 Dim J As Integer
-Dim Counter As Long
+Dim counter As Long
 Dim oPres As Presentation
 Dim mbResult As Integer
 
@@ -196,7 +196,7 @@ Sub CompressPicture()
 Dim sld As slide
 Dim shp As Shape
 Dim sldOne As slide
-Dim W As Long
+Dim w As Long
 
 
 If ActiveWindow.Selection.Type = ppSelectionShapes Then
@@ -211,13 +211,13 @@ ActiveWindow.ViewType = ppViewNormal
 
 Set sldOne = ActiveWindow.View.slide
 
-W = sldOne.SlideIndex
+w = sldOne.slideIndex
 
 On Error Resume Next
 For Each shp In sldOne.Shapes
 
     If shp.Type = msoPicture Then
-        ActiveWindow.View.GotoSlide sld.SlideIndex
+        ActiveWindow.View.GotoSlide sld.slideIndex
         shp.Select
         Application.CommandBars.ExecuteMso "PicturesCompress"
         Exit Sub
@@ -232,7 +232,7 @@ For Each sld In ActiveWindow.Presentation.Slides
     For Each shp In sld.Shapes
     
         If shp.Type = msoPicture Then
-            ActiveWindow.View.GotoSlide sld.SlideIndex
+            ActiveWindow.View.GotoSlide sld.slideIndex
             shp.Select
             Application.CommandBars.ExecuteMso "PicturesCompress"
             Exit Sub

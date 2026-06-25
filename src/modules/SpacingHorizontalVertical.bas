@@ -4,7 +4,7 @@ Dim sngGap As Single
 Dim rayShapes() As Shape
 Dim L As Double
 Dim M As Double
-Dim A As Double
+Dim a As Double
 
 If ActiveWindow.Selection.HasChildShapeRange Then
 
@@ -31,33 +31,33 @@ Call SortByLeft(rayShapes)
 'MsgBox ((UBound(rayShapes) / 2) + 0.5)
 
 If UBound(rayShapes) Mod 2 = 0 Then
-A = ((UBound(rayShapes) / 2))
+a = ((UBound(rayShapes) / 2))
 For L = 1 To ((UBound(rayShapes) / 2))
 Debug.Print rayShapes(L).Name
-rayShapes(L).Left = rayShapes(L).Left - sngGap * A
-A = A - 1
+rayShapes(L).Left = rayShapes(L).Left - sngGap * a
+a = a - 1
 Next L
 
-A = 1
+a = 1
 For M = ((UBound(rayShapes) / 2) + 2) To UBound(rayShapes)
 Debug.Print rayShapes(L).Name
-rayShapes(M).Left = rayShapes(M).Left + sngGap * A
-A = A + 1
+rayShapes(M).Left = rayShapes(M).Left + sngGap * a
+a = a + 1
 Next M
 
 Else
-A = ((UBound(rayShapes) / 2) - 0.5)
+a = ((UBound(rayShapes) / 2) - 0.5)
 For L = 1 To ((UBound(rayShapes) / 2) - 0.5)
 Debug.Print rayShapes(L).Name
-rayShapes(L).Left = rayShapes(L).Left - sngGap * A
-A = A - 1
+rayShapes(L).Left = rayShapes(L).Left - sngGap * a
+a = a - 1
 Next L
 
-A = 1
+a = 1
 For M = ((UBound(rayShapes) / 2) + 1.5) To UBound(rayShapes)
 Debug.Print rayShapes(L).Name
-rayShapes(M).Left = rayShapes(M).Left + sngGap * A
-A = A + 1
+rayShapes(M).Left = rayShapes(M).Left + sngGap * a
+a = a + 1
 Next M
 
 End If
@@ -86,33 +86,33 @@ Call SortByLeft(rayShapes)
 'MsgBox ((UBound(rayShapes) / 2) + 0.5)
 
 If UBound(rayShapes) Mod 2 = 0 Then
-A = ((UBound(rayShapes) / 2))
+a = ((UBound(rayShapes) / 2))
 For L = 1 To ((UBound(rayShapes) / 2))
 Debug.Print rayShapes(L).Name
-rayShapes(L).Left = rayShapes(L).Left - sngGap * A
-A = A - 1
+rayShapes(L).Left = rayShapes(L).Left - sngGap * a
+a = a - 1
 Next L
 
-A = 1
+a = 1
 For M = ((UBound(rayShapes) / 2) + 2) To UBound(rayShapes)
 Debug.Print rayShapes(L).Name
-rayShapes(M).Left = rayShapes(M).Left + sngGap * A
-A = A + 1
+rayShapes(M).Left = rayShapes(M).Left + sngGap * a
+a = a + 1
 Next M
 
 Else
-A = ((UBound(rayShapes) / 2) - 0.5)
+a = ((UBound(rayShapes) / 2) - 0.5)
 For L = 1 To ((UBound(rayShapes) / 2) - 0.5)
 Debug.Print rayShapes(L).Name
-rayShapes(L).Left = rayShapes(L).Left - sngGap * A
-A = A - 1
+rayShapes(L).Left = rayShapes(L).Left - sngGap * a
+a = a - 1
 Next L
 
-A = 1
+a = 1
 For M = ((UBound(rayShapes) / 2) + 1.5) To UBound(rayShapes)
 Debug.Print rayShapes(L).Name
-rayShapes(M).Left = rayShapes(M).Left + sngGap * A
-A = A + 1
+rayShapes(M).Left = rayShapes(M).Left + sngGap * a
+a = a + 1
 Next M
 
 End If
@@ -125,7 +125,7 @@ Dim sngGap As Single
 Dim rayShapes() As Shape
 Dim L As Double
 Dim M As Double
-Dim A As Double
+Dim a As Double
 
 If ActiveWindow.Selection.HasChildShapeRange Then
 
@@ -152,33 +152,33 @@ Call SortByLeft(rayShapes)
 'MsgBox ((UBound(rayShapes) / 2) + 0.5)
 
 If UBound(rayShapes) Mod 2 = 0 Then
-A = ((UBound(rayShapes) / 2))
+a = ((UBound(rayShapes) / 2))
 For L = 1 To ((UBound(rayShapes) / 2))
 Debug.Print rayShapes(L).Name
-rayShapes(L).Left = rayShapes(L).Left + sngGap * A
-A = A - 1
+rayShapes(L).Left = rayShapes(L).Left + sngGap * a
+a = a - 1
 Next L
 
-A = 1
+a = 1
 For M = ((UBound(rayShapes) / 2) + 2) To UBound(rayShapes)
 Debug.Print rayShapes(L).Name
-rayShapes(M).Left = rayShapes(M).Left - sngGap * A
-A = A + 1
+rayShapes(M).Left = rayShapes(M).Left - sngGap * a
+a = a + 1
 Next M
 
 Else
-A = ((UBound(rayShapes) / 2) - 0.5)
+a = ((UBound(rayShapes) / 2) - 0.5)
 For L = 1 To ((UBound(rayShapes) / 2) - 0.5)
 Debug.Print rayShapes(L).Name
-rayShapes(L).Left = rayShapes(L).Left + sngGap * A
-A = A - 1
+rayShapes(L).Left = rayShapes(L).Left + sngGap * a
+a = a - 1
 Next L
 
-A = 1
+a = 1
 For M = ((UBound(rayShapes) / 2) + 1.5) To UBound(rayShapes)
 Debug.Print rayShapes(L).Name
-rayShapes(M).Left = rayShapes(M).Left - sngGap * A
-A = A + 1
+rayShapes(M).Left = rayShapes(M).Left - sngGap * a
+a = a + 1
 Next M
 
 End If
@@ -208,33 +208,33 @@ Call SortByLeft(rayShapes)
 'MsgBox ((UBound(rayShapes) / 2) + 0.5)
 
 If UBound(rayShapes) Mod 2 = 0 Then
-A = ((UBound(rayShapes) / 2))
+a = ((UBound(rayShapes) / 2))
 For L = 1 To ((UBound(rayShapes) / 2))
 Debug.Print rayShapes(L).Name
-rayShapes(L).Left = rayShapes(L).Left + sngGap * A
-A = A - 1
+rayShapes(L).Left = rayShapes(L).Left + sngGap * a
+a = a - 1
 Next L
 
-A = 1
+a = 1
 For M = ((UBound(rayShapes) / 2) + 2) To UBound(rayShapes)
 Debug.Print rayShapes(L).Name
-rayShapes(M).Left = rayShapes(M).Left - sngGap * A
-A = A + 1
+rayShapes(M).Left = rayShapes(M).Left - sngGap * a
+a = a + 1
 Next M
 
 Else
-A = ((UBound(rayShapes) / 2) - 0.5)
+a = ((UBound(rayShapes) / 2) - 0.5)
 For L = 1 To ((UBound(rayShapes) / 2) - 0.5)
 Debug.Print rayShapes(L).Name
-rayShapes(L).Left = rayShapes(L).Left + sngGap * A
-A = A - 1
+rayShapes(L).Left = rayShapes(L).Left + sngGap * a
+a = a - 1
 Next L
 
-A = 1
+a = 1
 For M = ((UBound(rayShapes) / 2) + 1.5) To UBound(rayShapes)
 Debug.Print rayShapes(L).Name
-rayShapes(M).Left = rayShapes(M).Left - sngGap * A
-A = A + 1
+rayShapes(M).Left = rayShapes(M).Left - sngGap * a
+a = a + 1
 Next M
 
 End If
@@ -247,7 +247,7 @@ Dim sngGap As Single
 Dim rayShapes() As Shape
 Dim L As Double
 Dim M As Double
-Dim A As Double
+Dim a As Double
 
 If ActiveWindow.Selection.HasChildShapeRange Then
 
@@ -275,33 +275,33 @@ Call SortByTop(rayShapes)
 'MsgBox ((UBound(rayShapes) / 2) + 0.5)
 
 If UBound(rayShapes) Mod 2 = 0 Then
-A = ((UBound(rayShapes) / 2))
+a = ((UBound(rayShapes) / 2))
 For L = 1 To ((UBound(rayShapes) / 2))
 Debug.Print rayShapes(L).Name
-rayShapes(L).Top = rayShapes(L).Top - sngGap * A
-A = A - 1
+rayShapes(L).Top = rayShapes(L).Top - sngGap * a
+a = a - 1
 Next L
 
-A = 1
+a = 1
 For M = ((UBound(rayShapes) / 2) + 2) To UBound(rayShapes)
 Debug.Print rayShapes(L).Name
-rayShapes(M).Top = rayShapes(M).Top + sngGap * A
-A = A + 1
+rayShapes(M).Top = rayShapes(M).Top + sngGap * a
+a = a + 1
 Next M
 
 Else
-A = ((UBound(rayShapes) / 2) - 0.5)
+a = ((UBound(rayShapes) / 2) - 0.5)
 For L = 1 To ((UBound(rayShapes) / 2) - 0.5)
 Debug.Print rayShapes(L).Name
-rayShapes(L).Top = rayShapes(L).Top - sngGap * A
-A = A - 1
+rayShapes(L).Top = rayShapes(L).Top - sngGap * a
+a = a - 1
 Next L
 
-A = 1
+a = 1
 For M = ((UBound(rayShapes) / 2) + 1.5) To UBound(rayShapes)
 Debug.Print rayShapes(L).Name
-rayShapes(M).Top = rayShapes(M).Top + sngGap * A
-A = A + 1
+rayShapes(M).Top = rayShapes(M).Top + sngGap * a
+a = a + 1
 Next M
 
 End If
@@ -332,33 +332,33 @@ Call SortByTop(rayShapes)
 'MsgBox ((UBound(rayShapes) / 2) + 0.5)
 
 If UBound(rayShapes) Mod 2 = 0 Then
-A = ((UBound(rayShapes) / 2))
+a = ((UBound(rayShapes) / 2))
 For L = 1 To ((UBound(rayShapes) / 2))
 Debug.Print rayShapes(L).Name
-rayShapes(L).Top = rayShapes(L).Top - sngGap * A
-A = A - 1
+rayShapes(L).Top = rayShapes(L).Top - sngGap * a
+a = a - 1
 Next L
 
-A = 1
+a = 1
 For M = ((UBound(rayShapes) / 2) + 2) To UBound(rayShapes)
 Debug.Print rayShapes(L).Name
-rayShapes(M).Top = rayShapes(M).Top + sngGap * A
-A = A + 1
+rayShapes(M).Top = rayShapes(M).Top + sngGap * a
+a = a + 1
 Next M
 
 Else
-A = ((UBound(rayShapes) / 2) - 0.5)
+a = ((UBound(rayShapes) / 2) - 0.5)
 For L = 1 To ((UBound(rayShapes) / 2) - 0.5)
 Debug.Print rayShapes(L).Name
-rayShapes(L).Top = rayShapes(L).Top - sngGap * A
-A = A - 1
+rayShapes(L).Top = rayShapes(L).Top - sngGap * a
+a = a - 1
 Next L
 
-A = 1
+a = 1
 For M = ((UBound(rayShapes) / 2) + 1.5) To UBound(rayShapes)
 Debug.Print rayShapes(L).Name
-rayShapes(M).Top = rayShapes(M).Top + sngGap * A
-A = A + 1
+rayShapes(M).Top = rayShapes(M).Top + sngGap * a
+a = a + 1
 Next M
 
 End If
@@ -373,7 +373,7 @@ Dim sngGap As Single
 Dim rayShapes() As Shape
 Dim L As Double
 Dim M As Double
-Dim A As Double
+Dim a As Double
 
 If ActiveWindow.Selection.HasChildShapeRange Then
 
@@ -402,33 +402,33 @@ Call SortByTop(rayShapes)
 'MsgBox ((UBound(rayShapes) / 2) + 0.5)
 
 If UBound(rayShapes) Mod 2 = 0 Then
-A = ((UBound(rayShapes) / 2))
+a = ((UBound(rayShapes) / 2))
 For L = 1 To ((UBound(rayShapes) / 2))
 Debug.Print rayShapes(L).Name
-rayShapes(L).Top = rayShapes(L).Top + sngGap * A
-A = A - 1
+rayShapes(L).Top = rayShapes(L).Top + sngGap * a
+a = a - 1
 Next L
 
-A = 1
+a = 1
 For M = ((UBound(rayShapes) / 2) + 2) To UBound(rayShapes)
 Debug.Print rayShapes(L).Name
-rayShapes(M).Top = rayShapes(M).Top - sngGap * A
-A = A + 1
+rayShapes(M).Top = rayShapes(M).Top - sngGap * a
+a = a + 1
 Next M
 
 Else
-A = ((UBound(rayShapes) / 2) - 0.5)
+a = ((UBound(rayShapes) / 2) - 0.5)
 For L = 1 To ((UBound(rayShapes) / 2) - 0.5)
 Debug.Print rayShapes(L).Name
-rayShapes(L).Top = rayShapes(L).Top + sngGap * A
-A = A - 1
+rayShapes(L).Top = rayShapes(L).Top + sngGap * a
+a = a - 1
 Next L
 
-A = 1
+a = 1
 For M = ((UBound(rayShapes) / 2) + 1.5) To UBound(rayShapes)
 Debug.Print rayShapes(L).Name
-rayShapes(M).Top = rayShapes(M).Top - sngGap * A
-A = A + 1
+rayShapes(M).Top = rayShapes(M).Top - sngGap * a
+a = a + 1
 Next M
 
 End If
@@ -459,33 +459,33 @@ Call SortByTop(rayShapes)
 'MsgBox ((UBound(rayShapes) / 2) + 0.5)
 
 If UBound(rayShapes) Mod 2 = 0 Then
-A = ((UBound(rayShapes) / 2))
+a = ((UBound(rayShapes) / 2))
 For L = 1 To ((UBound(rayShapes) / 2))
 Debug.Print rayShapes(L).Name
-rayShapes(L).Top = rayShapes(L).Top + sngGap * A
-A = A - 1
+rayShapes(L).Top = rayShapes(L).Top + sngGap * a
+a = a - 1
 Next L
 
-A = 1
+a = 1
 For M = ((UBound(rayShapes) / 2) + 2) To UBound(rayShapes)
 Debug.Print rayShapes(L).Name
-rayShapes(M).Top = rayShapes(M).Top - sngGap * A
-A = A + 1
+rayShapes(M).Top = rayShapes(M).Top - sngGap * a
+a = a + 1
 Next M
 
 Else
-A = ((UBound(rayShapes) / 2) - 0.5)
+a = ((UBound(rayShapes) / 2) - 0.5)
 For L = 1 To ((UBound(rayShapes) / 2) - 0.5)
 Debug.Print rayShapes(L).Name
-rayShapes(L).Top = rayShapes(L).Top + sngGap * A
-A = A - 1
+rayShapes(L).Top = rayShapes(L).Top + sngGap * a
+a = a - 1
 Next L
 
-A = 1
+a = 1
 For M = ((UBound(rayShapes) / 2) + 1.5) To UBound(rayShapes)
 Debug.Print rayShapes(L).Name
-rayShapes(M).Top = rayShapes(M).Top - sngGap * A
-A = A + 1
+rayShapes(M).Top = rayShapes(M).Top - sngGap * a
+a = a + 1
 Next M
 
 End If

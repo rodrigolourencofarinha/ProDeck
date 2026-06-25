@@ -30,13 +30,13 @@ Next sld
         SetProgress (PresentationSlide.SlideNumber / ActiveWindow.Presentation.Slides.Count * 100)
         
         Set Watermark = .Shapes.AddTextbox(Orientation:=msoTextOrientationHorizontal, Left:=0, Top:=0, Width:=400, Height:=100)
-        Watermark.Width = Sqr(Application.ActivePresentation.PageSetup.SlideWidth * Application.ActivePresentation.PageSetup.SlideWidth + Application.ActivePresentation.PageSetup.SlideHeight * Application.ActivePresentation.PageSetup.SlideHeight)
+        Watermark.Width = Sqr(Application.ActivePresentation.PageSetup.slideWidth * Application.ActivePresentation.PageSetup.slideWidth + Application.ActivePresentation.PageSetup.slideHeight * Application.ActivePresentation.PageSetup.slideHeight)
         Watermark.TextFrame.TextRange.text = WatermarkText
         Watermark.TextFrame.TextRange.Font.size = 100
         Watermark.TextFrame.HorizontalAnchor = msoAnchorCenter
-        Watermark.Rotation = -Atn(Application.ActivePresentation.PageSetup.SlideHeight / Application.ActivePresentation.PageSetup.SlideWidth) * 180 / PI
-        Watermark.Left = (Application.ActivePresentation.PageSetup.SlideWidth - Watermark.Width) / 2
-        Watermark.Top = (Application.ActivePresentation.PageSetup.SlideHeight - Watermark.Height) / 2
+        Watermark.Rotation = -Atn(Application.ActivePresentation.PageSetup.slideHeight / Application.ActivePresentation.PageSetup.slideWidth) * 180 / PI
+        Watermark.Left = (Application.ActivePresentation.PageSetup.slideWidth - Watermark.Width) / 2
+        Watermark.Top = (Application.ActivePresentation.PageSetup.slideHeight - Watermark.Height) / 2
         Watermark.Name = "PRODECK WATERMARK"
         
         Watermark.TextFrame2.TextRange.Characters.Font.Fill.ForeColor.RGB = WatermarkTextColor

@@ -14,8 +14,8 @@ Function InsertSlide() As slide
         Exit Function
     End If
     
-    Set InsertSlide = ActiveWindow.Presentation.Slides.AddSlide(curSlide.SlideIndex + 1, curSlide.CustomLayout)
-    ActiveWindow.View.GotoSlide InsertSlide.SlideIndex
+    Set InsertSlide = ActiveWindow.Presentation.Slides.AddSlide(curSlide.slideIndex + 1, curSlide.CustomLayout)
+    ActiveWindow.View.GotoSlide InsertSlide.slideIndex
 End Function
 
 

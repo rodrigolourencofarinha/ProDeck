@@ -13,13 +13,13 @@ Sub Export_Notes_Text()
     Dim sName As String
     Dim mbResult As Integer
     Dim mbContinue As Integer
-    Dim DotPosition As Integer
+    Dim dotPosition As Integer
     
 
     'Strip extension from filename
-    DotPosition = InStrRev(ActivePresentation.Name, ".")
-    If DotPosition > 0 Then
-        sName = Left(ActivePresentation.Name, DotPosition - 1)
+    dotPosition = InStrRev(ActivePresentation.Name, ".")
+    If dotPosition > 0 Then
+        sName = Left(ActivePresentation.Name, dotPosition - 1)
     Else
         sName = ActivePresentation.Name
     End If
@@ -84,7 +84,7 @@ Sub Export_Notes_Text()
                         For Each oSl In oSlides
                             If Not NotesText(oSl) = "" Then
                                 strNotesText = strNotesText & "======================================" & vbCrLf
-                                strNotesText = strNotesText & "Slide: " & oSl.SlideIndex & vbCrLf
+                                strNotesText = strNotesText & "Slide: " & oSl.slideIndex & vbCrLf
                                 strNotesText = strNotesText & "Title: " & SlideTitle(oSl) & vbCrLf
                                 strNotesText = strNotesText & NotesText(oSl) & vbCrLf
                             End If
@@ -120,7 +120,7 @@ Sub Export_Notes_Text()
                         For Each oSl In oSlides
                             If Not NotesText(oSl) = "" Then
                                 strNotesText = strNotesText & "======================================" & vbCrLf
-                                strNotesText = strNotesText & "Slide: " & oSl.SlideIndex & vbCrLf
+                                strNotesText = strNotesText & "Slide: " & oSl.slideIndex & vbCrLf
                                 strNotesText = strNotesText & "Title: " & SlideTitle(oSl) & vbCrLf
                                 strNotesText = strNotesText & NotesText(oSl) & vbCrLf
                             End If
@@ -157,7 +157,7 @@ For Each oSh In oSl.Shapes
             If Len(oSh.TextFrame.TextRange.text) > 0 Then
                 SlideTitle = oSh.TextFrame.TextRange.text
             Else
-                SlideTitle = "Slide " & CStr(oSl.SlideIndex)
+                SlideTitle = "Slide " & CStr(oSl.slideIndex)
             End If
             
             Exit Function

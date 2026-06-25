@@ -181,7 +181,7 @@ Dim oSl As slide
 Dim X As Long
 Dim Y As Long
 Dim Z As Long
-Dim W As Long
+Dim w As Long
 Dim i As Long
 Dim J As Long
 Dim MainColor As Long, SecondColor As Long
@@ -257,13 +257,13 @@ On Error Resume Next
                             
                                 If .Table.Rows.Item(i).Cells(J).Shape.TextFrame.HasText Then
                                 
-                                    For W = 1 To .Table.Rows.Item(i).Cells(J).Shape.TextFrame.TextRange.Runs.Count
+                                    For w = 1 To .Table.Rows.Item(i).Cells(J).Shape.TextFrame.TextRange.Runs.Count
                                     
-                                        If .Table.Rows.Item(i).Cells(J).Shape.TextFrame.TextRange.Runs(W).Font.color.RGB = MainColor Then
-                                            .Table.Rows.Item(i).Cells(J).Shape.TextFrame.TextRange.Runs(W).Font.color.RGB = SecondColor
+                                        If .Table.Rows.Item(i).Cells(J).Shape.TextFrame.TextRange.Runs(w).Font.color.RGB = MainColor Then
+                                            .Table.Rows.Item(i).Cells(J).Shape.TextFrame.TextRange.Runs(w).Font.color.RGB = SecondColor
                                         End If
                                         
-                                    Next W
+                                    Next w
                                     
                                 End If
                                 
@@ -308,7 +308,7 @@ Dim oSl As slide
 Dim X As Long
 Dim Y As Long
 Dim Z As Long
-Dim W As Long
+Dim w As Long
 Dim i As Long
 Dim J As Long
 Dim MainColor As Long, SecondColor As Long
@@ -387,11 +387,11 @@ For Each oSl In ActiveWindow.Selection.SlideRange
                         ' Text
                         If .Table.Rows.Item(i).Cells(J).Shape.HasTextFrame Then
                             If .Table.Rows.Item(i).Cells(J).Shape.TextFrame.HasText Then
-                                For W = 1 To .Table.Rows.Item(i).Cells(J).Shape.TextFrame.TextRange.Runs.Count
-                                    If .Table.Rows.Item(i).Cells(J).Shape.TextFrame.TextRange.Runs(W).Font.color.RGB = MainColor Then
-                                        .Table.Rows.Item(i).Cells(J).Shape.TextFrame.TextRange.Runs(W).Font.color.RGB = SecondColor
+                                For w = 1 To .Table.Rows.Item(i).Cells(J).Shape.TextFrame.TextRange.Runs.Count
+                                    If .Table.Rows.Item(i).Cells(J).Shape.TextFrame.TextRange.Runs(w).Font.color.RGB = MainColor Then
+                                        .Table.Rows.Item(i).Cells(J).Shape.TextFrame.TextRange.Runs(w).Font.color.RGB = SecondColor
                                     End If
-                                Next W
+                                Next w
                             End If
                         End If
                         

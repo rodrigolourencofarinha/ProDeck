@@ -16,7 +16,7 @@ On Error Resume Next
 Dim myFillColor As Variant
 Dim shp As Shape
 Dim mySlide As Integer
-mySlide = ActiveWindow.View.slide.SlideIndex
+mySlide = ActiveWindow.View.slide.slideIndex
 
 If ActiveWindow.Selection.HasChildShapeRange Then
 
@@ -83,7 +83,7 @@ On Error Resume Next
 Dim myLineColor As Variant
 Dim shp As Shape
 Dim mySlide As Integer
-mySlide = ActiveWindow.View.slide.SlideIndex
+mySlide = ActiveWindow.View.slide.slideIndex
 
 If ActiveWindow.Selection.HasChildShapeRange Then
     If ActiveWindow.Selection.ChildShapeRange.Fill.Visible = msoFalse Then
@@ -135,7 +135,7 @@ On Error Resume Next
 Dim myFontColor As Variant
 Dim shp As Shape
 Dim mySlide As Integer
-mySlide = ActiveWindow.View.slide.SlideIndex
+mySlide = ActiveWindow.View.slide.slideIndex
 
 
 If ActiveWindow.Selection.HasChildShapeRange Then

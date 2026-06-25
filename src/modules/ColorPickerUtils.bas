@@ -85,16 +85,16 @@ Function GetLongFromHex(hexColor As String) As Long
 
 Dim r As String
 Dim g As String
-Dim B As String
+Dim b As String
 
 hexColor = VBA.Replace(hexColor, "#", "")
 hexColor = VBA.Right$("000000" & hexColor, 6)
 
 r = Left(hexColor, 2)
 g = Mid(hexColor, 3, 2)
-B = Right(hexColor, 2)
+b = Right(hexColor, 2)
 
-GetLongFromHex = Hex2Dec(B & g & r)
+GetLongFromHex = Hex2Dec(b & g & r)
 
 End Function
 

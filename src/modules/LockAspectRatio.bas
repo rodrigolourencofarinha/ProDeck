@@ -1,50 +1,22 @@
 Attribute VB_Name = "LockAspectRatio"
 Option Explicit
 Public MyRibbon As IRibbonUI
-Private X As EventClassModule
 Public IsPressed As Boolean
 Sub InvalRibbon()
-    On Error Resume Next
-    If MyRibbon Is Nothing Then Set MyRibbon = Rib
-    If Rib Is Nothing Then Set Rib = MyRibbon
-    If MyRibbon Is Nothing Then Exit Sub
-
-    Err.Clear
-    MyRibbon.Invalidate
-    If Err.Number <> 0 Then
-        Err.Clear
-        Set MyRibbon = Nothing
-        If Not Rib Is Nothing Then
-            Rib.Invalidate
-            If Err.Number = 0 Then
-                Set MyRibbon = Rib
-            Else
-                Err.Clear
-                Set Rib = Nothing
-            End If
-        End If
-    End If
+    AutoTab_InvalRibbon
 End Sub
 Sub ArmAutoTabEventHandler()
-    On Error Resume Next
-    If X Is Nothing Then Set X = New EventClassModule
-    Set X.App = Application
-    If Err.Number <> 0 Then
-        Err.Clear
-        Set X = Nothing
-        Set X = New EventClassModule
-        Set X.App = Application
-    End If
+    AutoTab_ArmEventHandler
 End Sub
 'Callback for customUI.onLoad
 Sub OnLoad(ribbon As IRibbonUI)
     On Error Resume Next
     Set MyRibbon = ribbon
     Set Rib = ribbon
-    ArmAutoTabEventHandler
+    AutoTab_ArmEventHandler
     If Not TrapFlag Then TrapEvents
-    InitializeAutoTabMonitoringSetting
-    MaybeActivateProDeckTab
+    AutoTab_Initialize
+    AutoTab_MaybeActivate
 End Sub
 'Callback for all Style Buttons getPressed
 Sub getPressedStyleBtn(control As IRibbonControl, ByRef returnedVal)

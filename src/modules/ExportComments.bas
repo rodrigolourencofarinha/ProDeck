@@ -14,15 +14,15 @@ Dim sName As String
 Dim mbResult As Integer
 Dim mbContinue As Integer
 Dim oCom As Comment
-Dim DotPosition As Integer
+Dim dotPosition As Integer
 Dim RepliesCount As Integer
 
 
 'Strip extension from filename
-DotPosition = InStrRev(ActivePresentation.Name, ".")
+dotPosition = InStrRev(ActivePresentation.Name, ".")
 
-If DotPosition > 0 Then
-    sName = Left(ActivePresentation.Name, DotPosition - 1)
+If dotPosition > 0 Then
+    sName = Left(ActivePresentation.Name, dotPosition - 1)
 Else
     sName = ActivePresentation.Name
 End If
@@ -85,7 +85,7 @@ Select Case mbResult
                 For Each oSl In oSlides
                 If Not oSl.Comments.Count = 0 Then
                     strNotesText = strNotesText & "======================================" & vbCrLf
-                    strNotesText = strNotesText & "Slide: " & oSl.SlideIndex & vbCrLf
+                    strNotesText = strNotesText & "Slide: " & oSl.slideIndex & vbCrLf
                     strNotesText = strNotesText & "--------------" & vbCrLf
     
                         For Each oCom In oSl.Comments
@@ -139,7 +139,7 @@ Select Case mbResult
                 For Each oSl In oSlides
                 If Not oSl.Comments.Count = 0 Then
                     strNotesText = strNotesText & "======================================" & vbCrLf
-                    strNotesText = strNotesText & "Slide: " & oSl.SlideIndex & vbCrLf
+                    strNotesText = strNotesText & "Slide: " & oSl.slideIndex & vbCrLf
                     strNotesText = strNotesText & "--------------" & vbCrLf
     
                         For Each oCom In oSl.Comments

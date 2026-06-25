@@ -37,11 +37,11 @@ Public Sub TestExecuteMso()
 End Sub
 
 Private Function TryExecuteMso(ByVal idMso As String) As Boolean
-    On Error GoTo EH
+    On Error GoTo eh
     Application.CommandBars.ExecuteMso idMso
     TryExecuteMso = True
     Exit Function
-EH:
+eh:
     TryExecuteMso = False
 End Function
 

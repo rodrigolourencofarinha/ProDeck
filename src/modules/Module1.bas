@@ -3,7 +3,7 @@ Option Explicit
 
 Public Sub Save_Image_Only_Copy()
 
-    Dim p As Presentation, q As Presentation, t As Slide
+    Dim p As Presentation, q As Presentation, t As slide
     Dim i As Long, n As Long, w As Single, h As Single, ew As Long, eh As Long
     Dim folder As String, stem As String, outFile As String, tmp As String, img As String, stepName As String
     Dim errNum As Long, errText As String
@@ -24,8 +24,8 @@ Public Sub Save_Image_Only_Copy()
     stepName = "Preparing the temporary export folder"
     ResetFolder tmp
 
-    w = p.PageSetup.SlideWidth
-    h = p.PageSetup.SlideHeight
+    w = p.PageSetup.slideWidth
+    h = p.PageSetup.slideHeight
     ew = CLng(w * 2)
     eh = CLng(h * 2)
 
@@ -41,8 +41,8 @@ Public Sub Save_Image_Only_Copy()
 
     stepName = "Creating the image-only presentation"
     Set q = Presentations.Add
-    q.PageSetup.SlideWidth = w
-    q.PageSetup.SlideHeight = h
+    q.PageSetup.slideWidth = w
+    q.PageSetup.slideHeight = h
 
     stepName = "Rebuilding the presentation with image slides"
     For i = 1 To n

@@ -151,7 +151,7 @@ Dim Shp1 As Shape
 Dim shp As Shape
 Dim X As Long
 Dim M As Long
-Dim B As Long
+Dim b As Long
 Dim sngLastY As Single
 Dim rayShapes() As Shape
 
@@ -177,9 +177,9 @@ On Error Resume Next
     ' make sure selected shapes are sorted by top value
     Call SortByTop(rayShapes)
     
-    B = UBound(rayShapes)
+    b = UBound(rayShapes)
     
-    Set Shp1 = rayShapes(B)
+    Set Shp1 = rayShapes(b)
     sngLastY = Shp1.Top
     For X = (UBound(rayShapes) - 1) To 1 Step -1
         Set shp = rayShapes(X)
@@ -212,9 +212,9 @@ On Error Resume Next
     ' make sure selected shapes are sorted by top value
     Call SortByTop(rayShapes)
     
-    B = UBound(rayShapes)
+    b = UBound(rayShapes)
     
-    Set Shp1 = rayShapes(B)
+    Set Shp1 = rayShapes(b)
     sngLastY = Shp1.Top
     For X = (UBound(rayShapes) - 1) To 1 Step -1
         Set shp = rayShapes(X)
@@ -231,7 +231,7 @@ Dim Shp1 As Shape
 Dim shp As Shape
 Dim X As Long
 Dim M As Long
-Dim B As Long
+Dim b As Long
 Dim sngLastY As Single
 Dim rayShapes() As Shape
 
@@ -257,9 +257,9 @@ On Error Resume Next
     ' make sure selected shapes are sorted by top value
     Call SortByLeft(rayShapes)
     
-    B = UBound(rayShapes)
+    b = UBound(rayShapes)
     
-    Set Shp1 = rayShapes(B)
+    Set Shp1 = rayShapes(b)
     sngLastY = Shp1.Left
     For X = (UBound(rayShapes) - 1) To 1 Step -1
         Set shp = rayShapes(X)
@@ -291,9 +291,9 @@ On Error Resume Next
     ' make sure selected shapes are sorted by top value
     Call SortByLeft(rayShapes)
     
-    B = UBound(rayShapes)
+    b = UBound(rayShapes)
     
-    Set Shp1 = rayShapes(B)
+    Set Shp1 = rayShapes(b)
     sngLastY = Shp1.Left
     For X = (UBound(rayShapes) - 1) To 1 Step -1
         Set shp = rayShapes(X)

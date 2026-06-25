@@ -22,8 +22,8 @@ For ShapeNumber = 1 To ActiveWindow.Selection.SlideRange.Shapes.Count
 Next
 
 
-sldHeight = ActivePresentation.PageSetup.SlideHeight
-sldWidth = ActivePresentation.PageSetup.SlideWidth
+sldHeight = ActivePresentation.PageSetup.slideHeight
+sldWidth = ActivePresentation.PageSetup.slideWidth
 stnHeight = sldHeight * 0.16
 stnWidth = sldWidth * 0.13
 stnLeft = sldWidth - stnWidth - 5
@@ -94,7 +94,7 @@ Sub ConvertCommentsToStickyNotes()
     
     For CommentsCount = ActiveWindow.Selection.SlideRange.Comments.Count To 1 Step -1
         
-        Set StickyNote = ActiveWindow.Selection.SlideRange.Shapes.AddShape(msoShapeRectangle, Application.ActivePresentation.PageSetup.SlideWidth - (105 * (NumberOfStickies + 1)), 5, 100, 100)
+        Set StickyNote = ActiveWindow.Selection.SlideRange.Shapes.AddShape(msoShapeRectangle, Application.ActivePresentation.PageSetup.slideWidth - (105 * (NumberOfStickies + 1)), 5, 100, 100)
         
         With StickyNote
             .line.Visible = False
@@ -148,8 +148,8 @@ Sub MoveStickyNotesOffSlide()
             
             
             With ActiveWindow.Selection.SlideRange.Shapes(ShapeNumber)
-            ShapeRight = (Application.ActivePresentation.PageSetup.SlideWidth - .Left - .Width)
-            ShapeBottom = (Application.ActivePresentation.PageSetup.SlideHeight - .Top - .Height)
+            ShapeRight = (Application.ActivePresentation.PageSetup.slideWidth - .Left - .Width)
+            ShapeBottom = (Application.ActivePresentation.PageSetup.slideHeight - .Top - .Height)
                              
             If .Left <= ShapeRight And .Left <= .Top And .Left <= ShapeBottom Then
             
@@ -161,11 +161,11 @@ Sub MoveStickyNotesOffSlide()
             
             ElseIf ShapeRight <= ShapeBottom And ShapeRight <= .Left And ShapeRight <= .Top Then
             
-            .Left = 5 + Application.ActivePresentation.PageSetup.SlideWidth
+            .Left = 5 + Application.ActivePresentation.PageSetup.slideWidth
             
             Else
             
-            .Top = 5 + Application.ActivePresentation.PageSetup.SlideHeight
+            .Top = 5 + Application.ActivePresentation.PageSetup.slideHeight
             
             End If
             
@@ -245,8 +245,8 @@ Sub MoveStickyNotesOffAllSlides()
             
             
             With PresentationSlide.Shapes(ShapeNumber)
-            ShapeRight = (Application.ActivePresentation.PageSetup.SlideWidth - .Left - .Width)
-            ShapeBottom = (Application.ActivePresentation.PageSetup.SlideHeight - .Top - .Height)
+            ShapeRight = (Application.ActivePresentation.PageSetup.slideWidth - .Left - .Width)
+            ShapeBottom = (Application.ActivePresentation.PageSetup.slideHeight - .Top - .Height)
                              
             If .Left <= ShapeRight And .Left <= .Top And .Left <= ShapeBottom Then
             
@@ -258,11 +258,11 @@ Sub MoveStickyNotesOffAllSlides()
             
             ElseIf ShapeRight <= ShapeBottom And ShapeRight <= .Left And ShapeRight <= .Top Then
             
-            .Left = 5 + Application.ActivePresentation.PageSetup.SlideWidth
+            .Left = 5 + Application.ActivePresentation.PageSetup.slideWidth
             
             Else
             
-            .Top = 5 + Application.ActivePresentation.PageSetup.SlideHeight
+            .Top = 5 + Application.ActivePresentation.PageSetup.slideHeight
             
             End If
             

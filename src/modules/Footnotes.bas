@@ -30,7 +30,7 @@ End If
 
 Set sld = ActiveWindow.Selection.SlideRange(1)
 
-ttlBottom = Application.ActivePresentation.PageSetup.SlideHeight
+ttlBottom = Application.ActivePresentation.PageSetup.slideHeight
 
 For Each shp In sld.Shapes
     If shp.Name = "PRODECK SLIDE NOTES" Then
@@ -99,7 +99,7 @@ Dim Shpl As Shape
 Dim sngLastY As Single
 Dim sngLastX As Single
 Dim L As Long
-Dim B As Long
+Dim b As Long
 
 Set Shp1 = ActiveWindow.Selection.ShapeRange(1)
 sngName = Shp1.Name
@@ -122,13 +122,13 @@ Next sld
 Shp1.Name = "PRODECK SLIDE NOTES - USER DEFINED POSITION"
 
 L = Shp1.Left
-B = Shp1.Top + Shp1.Height
+b = Shp1.Top + Shp1.Height
 
 For Each sld In ActiveWindow.Presentation.Slides
     For Each shp In sld.Shapes
         If shp.Name = "PRODECK SLIDE NOTES" Then
             shp.Left = L
-            shp.Top = B - shp.Height
+            shp.Top = b - shp.Height
         End If
     Next shp
 Next sld

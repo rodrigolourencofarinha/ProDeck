@@ -6,8 +6,8 @@ Dim sldHeight As Single
 Dim sldWidth As Single
 Dim sldRight As Single
 
-sldHeight = ActivePresentation.PageSetup.SlideHeight
-sldWidth = ActivePresentation.PageSetup.SlideWidth
+sldHeight = ActivePresentation.PageSetup.slideHeight
+sldWidth = ActivePresentation.PageSetup.slideWidth
 sldRight = sldWidth
 
 Set sld = ActiveWindow.Presentation.Slides(ActiveWindow.View.slide.SlideNumber)
