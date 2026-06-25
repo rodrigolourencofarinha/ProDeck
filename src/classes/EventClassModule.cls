@@ -11,8 +11,9 @@ Public WithEvents App As PowerPoint.Application
 Attribute App.VB_VarHelpID = -1
 
 Private Sub App_WindowSelectionChange(ByVal Sel As Selection)
-    InvalRibbon   'Calls procedure in the code module to invalidate the ribbon when the selection changes
     On Error Resume Next
+
+    InvalRibbon   'Calls procedure in the code module to invalidate the ribbon when the selection changes
     If ActiveWindow.Selection.Type = ppSelectionShapes Then
         If ActiveWindow.Selection.ShapeRange.Type = msoTable Then
             Exit Sub

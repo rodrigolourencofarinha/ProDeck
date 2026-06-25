@@ -3,15 +3,23 @@ Option Explicit
 Public MyRibbon As IRibbonUI
 Dim X As New EventClassModule
 Public IsPressed As Boolean
-'Procedure to invalidate the ribbon called from the event class
 Sub InvalRibbon()
-    MyRibbon.Invalidate
+    On Error Resume Next
+    If MyRibbon Is Nothing Then Set MyRibbon = Rib
+    If Rib Is Nothing Then Set Rib = MyRibbon
+    If Not MyRibbon Is Nothing Then MyRibbon.Invalidate
+End Sub
+Sub ArmAutoTabEventHandler()
+    On Error Resume Next
+    Set X.App = Application
 End Sub
 'Callback for customUI.onLoad
 Sub OnLoad(ribbon As IRibbonUI)
+    On Error Resume Next
     Set MyRibbon = ribbon
-    Set X.App = PowerPoint.Application
-    'Load persisted toggle state before applying startup behavior
+    Set Rib = ribbon
+    ArmAutoTabEventHandler
+    If Not TrapFlag Then TrapEvents
     InitializeAutoTabMonitoringSetting
     MaybeActivateProDeckTab
 End Sub

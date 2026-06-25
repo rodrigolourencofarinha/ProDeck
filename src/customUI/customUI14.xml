@@ -4,6 +4,8 @@
             <tab id="ProDeck" label="ProDeck" keytip="X">               
                 <group id="GroupInsert" label="Insert" imageMso="SlideNewGallery"> 
                     <control idMso="SlideNewGallery" showLabel="false" keytip="SI"/>
+                    <control idMso="SlideLayoutGallery" showLabel="false" keytip="SI"/>
+                    <control idMso="SlideReset" showLabel="false" keytip="SI"/>
                     <control idMso="ShapesInsertGallery" showLabel="false" />
                     <control idMso="PasteMenu" showLabel="false" getVisible="IsWindows" keytip="PM"/>
                     <control idMso="PasteGallery" showLabel="false" getVisible="IsMac"/>
@@ -346,6 +348,9 @@
                         screentip="Export Comments to Text File" supertip="Extract all comments from all slides in this presentation and save to a text file."  />
                         <button id="Export_Notes_Text" label="Export Notes to Text File" image="ExportNotes" onAction="Export_Notes_Text" showLabel="false"
                         screentip="Export Notes to Text File" supertip="Extract all notes from all slides in this presentation and save to a text file."  />
+                        <menuSeparator id="ProtectSharingSeparator" title="Protect Sharing"/>
+                        <button id="Save_Image_Only_Copy" label="Save Image-Only Copy" imageMso="FileSaveAs" onAction="Save_Image_Only_Copy" showLabel="false"
+                        screentip="Save Image-Only Copy" supertip="Create a new PPTX beside the current file where every slide is converted into a full-slide image. The original presentation stays unchanged."  />
                         <menuSeparator id="FixFooterSlideNumber" title="Fix Slide Footers and Slide Numbers"/>
                         <button id="Fix_Footers" label="Fix Slide Footers" showLabel="true" imageMso="HeaderFooterEditFooter" onAction="Fix_Footers"/>
                         <button id="Fix_Slide_Numbers" label="Fix Slide Numbers" showLabel="true" imageMso="HeaderFooterPageNumberInsert" onAction="Fix_Slide_Numbers"/>
